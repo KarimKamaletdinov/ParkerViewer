@@ -8,8 +8,4 @@
     <ProjectReference Include="..\ParkerViewer.Abstractions\ParkerViewer.Abstractions.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Dtos\" />
-  </ItemGroup>
-
 </Project>
