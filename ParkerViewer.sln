@@ -18,6 +18,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkerViewer.WebClients", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkerViewer.Gui", "ParkerViewer.Gui\ParkerViewer.Gui.csproj", "{21E006F4-8856-4A6A-B6CF-5FC1BC7C78E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkerViewer.ClientApp", "ParkerViewer.ClientApp\ParkerViewer.ClientApp.csproj", "{A63D258A-C5B6-48A8-B16D-DEDF7D9164E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{21E006F4-8856-4A6A-B6CF-5FC1BC7C78E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21E006F4-8856-4A6A-B6CF-5FC1BC7C78E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21E006F4-8856-4A6A-B6CF-5FC1BC7C78E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A63D258A-C5B6-48A8-B16D-DEDF7D9164E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A63D258A-C5B6-48A8-B16D-DEDF7D9164E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A63D258A-C5B6-48A8-B16D-DEDF7D9164E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A63D258A-C5B6-48A8-B16D-DEDF7D9164E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
