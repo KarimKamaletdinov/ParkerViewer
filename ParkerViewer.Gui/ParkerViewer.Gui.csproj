@@ -70,5 +70,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ParkerViewer.Abstractions\ParkerViewer.Abstractions.csproj">
+      <Project>{851ee3d3-54b6-423f-ba71-3cb7bc6e21aa}</Project>
+      <Name>ParkerViewer.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ParkerViewer.WebClients\ParkerViewer.WebClients.csproj">
+      <Project>{5221d1be-1681-4c5c-82a1-d73c71d069a5}</Project>
+      <Name>ParkerViewer.WebClients</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ParkerViewer\ParkerViewer.csproj">
+      <Project>{7c39914a-a436-4795-97f1-c18c94122a76}</Project>
+      <Name>ParkerViewer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
