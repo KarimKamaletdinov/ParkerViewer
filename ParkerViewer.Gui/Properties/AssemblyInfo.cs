@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
-[assembly: AssemblyTitle("Parker.Gui")]
+[assembly: AssemblyTitle("ParkerViewer.Gui")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Parker.Gui")]
+[assembly: AssemblyProduct("ParkerViewer.Gui")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("7f7fe261-d256-4b5a-acfa-380aacb8b2e0")]
+[assembly: Guid("21e006f4-8856-4a6a-b6cf-5fc1bc7c78e8")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //

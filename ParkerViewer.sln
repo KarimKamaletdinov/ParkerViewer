@@ -16,7 +16,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkerViewer.Host", "Parker
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkerViewer.WebClients", "ParkerViewer.WebClients\ParkerViewer.WebClients.csproj", "{5221D1BE-1681-4C5C-82A1-D73C71D069A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parker.Gui", "Parker.Gui\Parker.Gui.csproj", "{7F7FE261-D256-4B5A-ACFA-380AACB8B2E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkerViewer.Gui", "ParkerViewer.Gui\ParkerViewer.Gui.csproj", "{21E006F4-8856-4A6A-B6CF-5FC1BC7C78E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,10 +40,10 @@ Global
 		{5221D1BE-1681-4C5C-82A1-D73C71D069A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5221D1BE-1681-4C5C-82A1-D73C71D069A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5221D1BE-1681-4C5C-82A1-D73C71D069A5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7F7FE261-D256-4B5A-ACFA-380AACB8B2E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7F7FE261-D256-4B5A-ACFA-380AACB8B2E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7F7FE261-D256-4B5A-ACFA-380AACB8B2E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7F7FE261-D256-4B5A-ACFA-380AACB8B2E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21E006F4-8856-4A6A-B6CF-5FC1BC7C78E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21E006F4-8856-4A6A-B6CF-5FC1BC7C78E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21E006F4-8856-4A6A-B6CF-5FC1BC7C78E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21E006F4-8856-4A6A-B6CF-5FC1BC7C78E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

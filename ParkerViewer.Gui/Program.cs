@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Parker.Gui
+namespace ParkerViewer.Gui
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Parker.Gui
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
+            Application.Run(new Form1());
         }
     }
 }

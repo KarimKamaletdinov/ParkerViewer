@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7F7FE261-D256-4B5A-ACFA-380AACB8B2E0}</ProjectGuid>
+    <ProjectGuid>{21E006F4-8856-4A6A-B6CF-5FC1BC7C78E8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Parker.Gui</RootNamespace>
-    <AssemblyName>Parker.Gui</AssemblyName>
+    <RootNamespace>ParkerViewer.Gui</RootNamespace>
+    <AssemblyName>ParkerViewer.Gui</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
