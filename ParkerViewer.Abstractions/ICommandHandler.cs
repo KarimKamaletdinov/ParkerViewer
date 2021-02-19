@@ -1,4 +1,4 @@
-﻿namespace ParkerViewer
+﻿namespace ParkerViewer.Abstractions
 {
     public interface ICommandHandler<T> where T : Command
     {

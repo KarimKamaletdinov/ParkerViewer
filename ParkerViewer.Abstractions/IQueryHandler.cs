@@ -1,4 +1,4 @@
-﻿namespace ParkerViewer
+﻿namespace ParkerViewer.Abstractions
 {
     public interface IQueryHandler<T, TResult> where T : Query<TResult>
     {
