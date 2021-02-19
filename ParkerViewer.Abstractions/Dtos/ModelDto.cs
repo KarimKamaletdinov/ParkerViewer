@@ -1,4 +1,4 @@
-﻿namespace ParkerViewer.Dtos
+﻿namespace ParkerViewer.Abstractions.Dtos
 {
     public class ModelDto
     {
