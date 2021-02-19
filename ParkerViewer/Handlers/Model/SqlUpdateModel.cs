@@ -1,6 +1,6 @@
 ﻿namespace ParkerViewer.Handlers.Model
 {
-    public class SqlInsertModel
+    public class SqlUpdateModel
     {
         
     }
