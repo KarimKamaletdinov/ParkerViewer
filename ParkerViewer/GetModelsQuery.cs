@@ -5,6 +5,6 @@ namespace ParkerViewer
 {
     public class GetModelsQuery : Query<ModelDto[]>
     {
-        public int UserId;
+
     }
 }
