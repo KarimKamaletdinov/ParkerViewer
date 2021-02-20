@@ -46,7 +46,7 @@ namespace ParkerViewer.Behaviours
         public string DetailColor
         {
             get => _detailColor;
-            set => _detailColor = value == "золотой" || value == "серебряный" ?
+            set => _detailColor = value != "золотой" && value != "серебряный" ?
                 throw new Exception("Name can be only \"золотой\" or " +
                 "\"серебряный\"") : value;
         }
@@ -54,7 +54,7 @@ namespace ParkerViewer.Behaviours
         public string WritingType
         {
             get => _writingType;
-            set => _writingType = value == "шариковый" || value == "роллер"
+            set => _writingType = value != "шариковый" &&s value != "роллер"
                 || value == "перьевой" ? throw new Exception("Name can be only " +
                     "\"золотой\" or \"серебряный\"") : value;
         }
