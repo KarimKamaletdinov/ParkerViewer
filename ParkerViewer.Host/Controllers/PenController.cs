@@ -16,20 +16,20 @@ namespace ParkerViewer.Host.Controllers
         [HttpGet]
         public IEnumerable<PenDto> Get()
         {
-            return new SqlGetModels().Execute(new GetPensQuery());
+            return new SqlGetPens().Execute(new GetPensQuery());
         }
 
         [HttpPost]
         public void Post([FromBody] PenDto pen)
         {
-            new SqlInsertModel().Execute(new PenCommand(){PenDto = pen});
+            new SqlInsertPen().Execute(new PenCommand(){PenDto = pen});
         }
         
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] PenDto pen)
         {
             pen.Id = id;
-            new SqlInsertModel().Execute(new PenCommand() { PenDto = pen });
+            new SqlUpdatePen().Execute(new PenCommand() { PenDto = pen });
         }
         
         [HttpDelete("{id}")]
