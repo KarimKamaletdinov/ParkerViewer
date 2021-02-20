@@ -7,7 +7,7 @@ namespace ParkerViewer.Handlers.Pen
     {
         public void Execute(DeletePenCommand command)
         {
-            new SqlModelRepository().Delete(command.Id);
+            new SqlPenRepository().Delete(command.Id);
         }
     }
 }

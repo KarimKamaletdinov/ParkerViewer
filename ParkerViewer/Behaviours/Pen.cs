@@ -1,4 +1,5 @@
 ﻿using System;
+using Dapper.Contrib.Extensions;
 
 namespace ParkerViewer.Behaviours
 {
@@ -14,7 +15,7 @@ namespace ParkerViewer.Behaviours
         private bool _engraving;
         private bool _forMan;
         private bool _forWoman;
-
+        
         public int Id
         {
             get => _id;
@@ -32,7 +33,7 @@ namespace ParkerViewer.Behaviours
         public int Price
         {
             get => _price;
-            set => _price = _id = value < 0 ? throw new Exception("Price can not" +
+            set => _price = value < 0 ? throw new Exception("Price can not" +
                 " be negative") : value;
         }
 
@@ -46,7 +47,7 @@ namespace ParkerViewer.Behaviours
         public string DetailColor
         {
             get => _detailColor;
-            set => _detailColor = value == "золотой" || value == "серебряный" ?
+            set => _detailColor = value != "золотой" && value != "серебряный" ?
                 throw new Exception("Name can be only \"золотой\" or " +
                 "\"серебряный\"") : value;
         }
@@ -54,7 +55,7 @@ namespace ParkerViewer.Behaviours
         public string WritingType
         {
             get => _writingType;
-            set => _writingType = value == "шариковый" || value == "роллер"
+            set => _writingType = value != "шариковый" && value != "роллер"
                 || value == "перьевой" ? throw new Exception("Name can be only " +
                     "\"золотой\" or \"серебряный\"") : value;
         }
