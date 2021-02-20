@@ -3,11 +3,11 @@ using ParkerViewer.Repositories;
 
 namespace ParkerViewer.Handlers.Pen
 {
-    public class SqlInsertModel : ICommandHandler<PenCommand>
+    public class SqlInsertPen : ICommandHandler<PenCommand>
     {
         public void Execute(PenCommand command)
         {
-            new SqlModelRepository().Insert(new Behaviours.Pen()
+            new SqlPenRepository().Insert(new Behaviours.Pen()
             {
                 Id = command.PenDto.Id,
                 CollectionId = command.PenDto.CollectionId,

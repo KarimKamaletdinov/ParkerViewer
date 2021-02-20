@@ -2,7 +2,7 @@
 
 namespace ParkerViewer.Repositories
 {
-    public interface IModelRepository
+    public interface IPenRepository
     {
         void Insert(Pen pen);
 

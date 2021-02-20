@@ -5,13 +5,13 @@ using ParkerViewer.Repositories;
 
 namespace ParkerViewer.Handlers.Pen
 {
-    public class SqlGetModels : IQueryHandler<GetPensQuery, PenDto[]>
+    public class SqlGetPens : IQueryHandler<GetPensQuery, PenDto[]>
     {
         public PenDto[] Execute(GetPensQuery query)
         {
             var models = new List<PenDto>();
 
-            foreach (var model in new SqlModelRepository().GetAll())
+            foreach (var model in new SqlPenRepository().GetAll())
             {
                models.Add(new PenDto()
                {
