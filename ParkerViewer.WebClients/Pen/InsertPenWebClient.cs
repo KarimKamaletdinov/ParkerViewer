@@ -4,7 +4,7 @@ using ParkerViewer.Abstractions;
 
 namespace ParkerViewer.WebClients.Pen
 {
-    public class HttpInsertPen : ICommandHandler<PenCommand>
+    public class InsertPenWebClient : ICommandHandler<PenCommand>
     {
         public void Execute(PenCommand command)
         {

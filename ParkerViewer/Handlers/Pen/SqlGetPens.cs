@@ -5,9 +5,9 @@ using ParkerViewer.Repositories;
 
 namespace ParkerViewer.Handlers.Pen
 {
-    public class SqlGetPens : IQueryHandler<GetPensQuery, PenDto[]>
+    public class SqlGetPens : IQueryHandler<GetPens, PenDto[]>
     {
-        public PenDto[] Execute(GetPensQuery query)
+        public PenDto[] Execute(GetPens query)
         {
             var models = new List<PenDto>();
 

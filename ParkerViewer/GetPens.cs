@@ -3,7 +3,7 @@ using ParkerViewer.Abstractions.Dtos;
 
 namespace ParkerViewer
 {
-    public class GetPensQuery : Query<PenDto[]>
+    public class GetPens : Query<PenDto[]>
     {
 
     }

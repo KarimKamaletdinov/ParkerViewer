@@ -5,13 +5,12 @@ using ParkerViewer.Abstractions.Dtos;
 
 namespace ParkerViewer.WebClients.Pen
 {
-    public class HttpGetPens : IQueryHandler<GetPensQuery, PenDto[]>
+    public class GetPensWebClient : IQueryHandler<GetPens, PenDto[]>
     {
-        public PenDto[] Execute(GetPensQuery query)
+        public PenDto[] Execute(GetPens query)
         {
             return JsonConvert.DeserializeObject<PenDto[]>(
                 new WebClient().DownloadString("https://localhost:44380/Pen"));
         }
-
     }
 }

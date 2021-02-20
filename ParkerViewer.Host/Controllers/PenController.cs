@@ -16,7 +16,7 @@ namespace ParkerViewer.Host.Controllers
         [HttpGet]
         public IEnumerable<PenDto> Get()
         {
-            return new SqlGetPens().Execute(new GetPensQuery());
+            return new SqlGetPens().Execute(new GetPens());
         }
 
         [HttpPost]
@@ -35,7 +35,7 @@ namespace ParkerViewer.Host.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            new SqlDeletePen().Execute(new DeletePenCommand(){Id = id});
+            new SqlDeletePen().Execute(new DeletePen(){Id = id});
         }
     }
 }
