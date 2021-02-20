@@ -3,17 +3,17 @@ using ParkerViewer.Abstractions;
 using ParkerViewer.Abstractions.Dtos;
 using ParkerViewer.Repositories;
 
-namespace ParkerViewer.Handlers.Model
+namespace ParkerViewer.Handlers.Pen
 {
-    public class SqlGetModels : IQueryHandler<GetModelsQuery, ModelDto[]>
+    public class SqlGetModels : IQueryHandler<GetPensQuery, PenDto[]>
     {
-        public ModelDto[] Execute(GetModelsQuery query)
+        public PenDto[] Execute(GetPensQuery query)
         {
-            var models = new List<ModelDto>();
+            var models = new List<PenDto>();
 
             foreach (var model in new SqlModelRepository().GetAll())
             {
-               models.Add(new ModelDto()
+               models.Add(new PenDto()
                {
                    Id = model.Id,
                    CollectionId = model.CollectionId,

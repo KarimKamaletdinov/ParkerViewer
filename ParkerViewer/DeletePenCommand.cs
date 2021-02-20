@@ -2,7 +2,7 @@
 
 namespace ParkerViewer
 {
-    public class DeleteModelCommand : Command
+    public class DeletePenCommand : Command
     {
         public int Id;
     }

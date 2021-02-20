@@ -4,12 +4,12 @@ namespace ParkerViewer.Repositories
 {
     public interface IModelRepository
     {
-        void Insert(Model model);
+        void Insert(Pen pen);
 
-        void Update(Model model);
+        void Update(Pen pen);
 
-        void Delete(Model model);
+        void Delete(int id);
 
-        Model[] GetAll();
+        Pen[] GetAll();
     }
 }

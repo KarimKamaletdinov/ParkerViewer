@@ -3,8 +3,8 @@ using ParkerViewer.Abstractions.Dtos;
 
 namespace ParkerViewer
 {
-    public class ModelCommand : Command
+    public class PenCommand : Command
     {
-        public ModelDto ModelDto;
+        public PenDto PenDto;
     }
 }
