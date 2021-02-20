@@ -2,7 +2,7 @@
 
 namespace ParkerViewer.Behaviours
 {
-    public class Model
+    public class Pen
     {
         private int _id;
         private int _collectionId;

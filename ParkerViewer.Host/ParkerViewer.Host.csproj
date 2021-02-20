@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ParkerViewer.Abstractions\ParkerViewer.Abstractions.csproj" />
     <ProjectReference Include="..\ParkerViewer\ParkerViewer.csproj" />
   </ItemGroup>

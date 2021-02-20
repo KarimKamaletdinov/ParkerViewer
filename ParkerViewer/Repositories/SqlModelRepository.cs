@@ -22,24 +22,24 @@ namespace ParkerViewer.Repositories
             _connectionString = b.ToString();
         }
 
-        public void Insert(Model model)
+        public void Insert(Pen pen)
         {
-            new SqlConnection(_connectionString).Insert(model);
+            new SqlConnection(_connectionString).Insert(pen);
         }
 
-        public void Update(Model model)
+        public void Update(Pen pen)
         {
-            new SqlConnection(_connectionString).Update(model);
+            new SqlConnection(_connectionString).Update(pen);
         }
 
-        public void Delete(Model model)
+        public void Delete(int id)
         {
-            new SqlConnection(_connectionString).Delete(model);
+            new SqlConnection(_connectionString).Delete(new Pen() {Id = id});
         }
 
-        public Model[] GetAll()
+        public Pen[] GetAll()
         {
-            return new SqlConnection(_connectionString).Query<Model>("SELECT * FROM Models")
+            return new SqlConnection(_connectionString).Query<Pen>("SELECT * FROM Models")
                 .ToArray();
         }
     }

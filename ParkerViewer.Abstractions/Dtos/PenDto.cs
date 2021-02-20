@@ -1,6 +1,6 @@
 ﻿namespace ParkerViewer.Abstractions.Dtos
 {
-    public class ModelDto
+    public class PenDto
     {
         public int Id { get; set; }
         public int CollectionId { get; set; }
