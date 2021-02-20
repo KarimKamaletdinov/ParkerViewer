@@ -8,7 +8,7 @@ namespace ParkerViewer.WebClients.Pen
     {
         public void Execute(PenCommand command)
         {
-            new WebClient().UploadString("https://localhost:44380/Pen", "Post",
+            new WebClient().UploadString("http://localhost:5000/Pen", "POST",
                 JsonConvert.SerializeObject(command.PenDto));
         }
     }

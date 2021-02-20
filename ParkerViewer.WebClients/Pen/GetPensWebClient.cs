@@ -10,7 +10,7 @@ namespace ParkerViewer.WebClients.Pen
         public PenDto[] Execute(GetPens query)
         {
             return JsonConvert.DeserializeObject<PenDto[]>(
-                new WebClient().DownloadString("https://localhost:44380/Pen"));
+                new WebClient().DownloadString("http://localhost:5000/Pen"));
         }
     }
 }
