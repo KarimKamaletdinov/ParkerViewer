@@ -1,24 +1,25 @@
 ﻿using ParkerViewer.Abstractions;
+using ParkerViewer.Abstractions.Commands;
 using ParkerViewer.Repositories;
 
 namespace ParkerViewer.Handlers.Pen
 {
-    public class SqlInsertPen : ICommandHandler<PenCommand>
+    public class SqlInsertPen : ICommandHandler<InsertPenCommand>
     {
-        public void Execute(PenCommand command)
+        public void Execute(InsertPenCommand command)
         {
-            new SqlPenRepository().Insert(new Behaviours.Pen()
+            new SqlPenRepository().Insert(new Models.Pen()
             {
-                Id = command.PenDto.Id,
-                CollectionId = command.PenDto.CollectionId,
-                DetailColor = command.PenDto.DetailColor,
-                Engraving = command.PenDto.Engraving,
-                ForMan = command.PenDto.ForMan,
-                ForWoman = command.PenDto.ForWoman,
-                GoldPen = command.PenDto.GoldPen,
-                Name = command.PenDto.Name,
-                Price = command.PenDto.Price,
-                WritingType = command.PenDto.WritingType
+                Id = command.Pen.Id,
+                CollectionId = command.Pen.CollectionId,
+                DetailColor = command.Pen.DetailColor,
+                Engraving = command.Pen.Engraving,
+                ForMan = command.Pen.ForMan,
+                ForWoman = command.Pen.ForWoman,
+                GoldPen = command.Pen.GoldPen,
+                Name = command.Pen.Name,
+                Price = command.Pen.Price,
+                WritingType = command.Pen.WritingType
             });
         }
     }

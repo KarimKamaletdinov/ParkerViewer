@@ -1,5 +1,8 @@
 ﻿using System;
 using Newtonsoft.Json;
+using ParkerViewer.Abstractions.Commands;
+using ParkerViewer.Abstractions.Dtos;
+using ParkerViewer.Abstractions.Queries;
 using ParkerViewer.WebClients.Pen;
 
 namespace ParkerViewer.TestApp
@@ -8,8 +11,22 @@ namespace ParkerViewer.TestApp
     {
         private static void Main(string[] args)
         {
+            new InsertPenWebClient().Execute(new InsertPenCommand()
+            {
+                Pen = JsonConvert.
+                    DeserializeObject<PenDto>(Console.ReadLine())
+            });
+            new UpdatePenWebClient().Execute(new UpdatePenCommand()
+            {
+                Pen = JsonConvert.
+                    DeserializeObject<PenDto>(Console.ReadLine())
+            });
+            new DeletePenWebClient().Execute(new DeletePenCommand()
+            {
+                Id = int.Parse(Console.ReadLine())
+            });
             Console.WriteLine(JsonConvert.SerializeObject(
-                new GetPensWebClient().Execute(new GetPens())));
+                new GetPensWebClient().Execute(new GetPensQuery())));
         }
     }
 }

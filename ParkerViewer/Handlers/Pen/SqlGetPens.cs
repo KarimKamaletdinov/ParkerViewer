@@ -1,13 +1,15 @@
 ﻿using System.Collections.Generic;
 using ParkerViewer.Abstractions;
+using ParkerViewer.Abstractions.Commands;
 using ParkerViewer.Abstractions.Dtos;
+using ParkerViewer.Abstractions.Queries;
 using ParkerViewer.Repositories;
 
 namespace ParkerViewer.Handlers.Pen
 {
-    public class SqlGetPens : IQueryHandler<GetPens, PenDto[]>
+    public class SqlGetPens : IQueryHandler<GetPensQuery, PenDto[]>
     {
-        public PenDto[] Execute(GetPens query)
+        public PenDto[] Execute(GetPensQuery query)
         {
             var models = new List<PenDto>();
 

@@ -1,7 +1,6 @@
 ﻿using System;
-using Dapper.Contrib.Extensions;
 
-namespace ParkerViewer.Behaviours
+namespace ParkerViewer.Models
 {
     public class Pen
     {
