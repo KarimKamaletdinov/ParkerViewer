@@ -18,7 +18,7 @@ namespace ParkerViewer.Models
         public int Id
         {
             get => _id;
-            set => _id = value <= 0 ? throw new Exception("Id can not be 0 or " +
+            set => _id = value <= 0 ? throw new Exception("PenId can not be 0 or " +
                 "negative") : value;
         }
 

@@ -17,7 +17,7 @@ namespace ParkerViewer.WebClients.Pen
         public void Execute(DeletePenCommand command)
         {
             var client = new WebClient();
-            new WebClient().UploadString($"{_baseUrl}/Pen/{command.Id}", "DELETE", "");
+            new WebClient().UploadString($"{_baseUrl}/Pen/{command.PenId}", "DELETE", "");
         }
     }
 }

@@ -37,7 +37,7 @@ namespace ParkerViewer.Host.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            new DeletePenHandler().Execute(new DeletePenCommand(){Id = id});
+            new DeletePenHandler().Execute(new DeletePenCommand(){PenId = id});
         }
     }
 }

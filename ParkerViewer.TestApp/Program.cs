@@ -23,7 +23,7 @@ namespace ParkerViewer.TestApp
             });
             new DeletePenWebClient().Execute(new DeletePenCommand()
             {
-                Id = int.Parse(Console.ReadLine())
+                PenId = int.Parse(Console.ReadLine())
             });
             Console.WriteLine(JsonConvert.SerializeObject(
                 new GetPensWebClient().Execute(new GetPensQuery())));

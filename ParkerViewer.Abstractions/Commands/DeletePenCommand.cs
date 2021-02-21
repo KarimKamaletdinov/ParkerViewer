@@ -2,6 +2,6 @@
 {
     public class DeletePenCommand : Command
     {
-        public int Id;
+        public int PenId;
     }
 }
