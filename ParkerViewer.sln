@@ -20,7 +20,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkerViewer.Gui", "ParkerV
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkerViewer.ClientApp", "ParkerViewer.ClientApp\ParkerViewer.ClientApp.csproj", "{A63D258A-C5B6-48A8-B16D-DEDF7D9164E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkerViewer.TestApp", "ParkerViewer.TestApp\ParkerViewer.TestApp.csproj", "{9EA6E28A-3E82-4CB5-99C2-BD301DF64B91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkerViewer.TestApp", "ParkerViewer.TestApp\ParkerViewer.TestApp.csproj", "{9EA6E28A-3E82-4CB5-99C2-BD301DF64B91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkerViewer.PensPage", "ParkerViewer.PensPage\ParkerViewer.PensPage.csproj", "{6E8B1E9F-177B-471D-9C61-9DACD40CAB99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +58,10 @@ Global
 		{9EA6E28A-3E82-4CB5-99C2-BD301DF64B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EA6E28A-3E82-4CB5-99C2-BD301DF64B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EA6E28A-3E82-4CB5-99C2-BD301DF64B91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E8B1E9F-177B-471D-9C61-9DACD40CAB99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E8B1E9F-177B-471D-9C61-9DACD40CAB99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E8B1E9F-177B-471D-9C61-9DACD40CAB99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E8B1E9F-177B-471D-9C61-9DACD40CAB99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
