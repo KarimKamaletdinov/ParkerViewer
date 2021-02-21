@@ -19,8 +19,8 @@ namespace ParkerViewer.PensPage
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            tableListBox1.Items.Add(("eee", new[] {("www", "tttt"), ("ttt", "hhhh") }));
-            tableListBox1.Items.Add(("ttt", new[] { ("www", "tttt"), ("ttt", "hhhh") }));
+            tableListBox1.Items.Add(("eee", new[] {("www", "tttt", TlbItemValue.String),
+                ("ttt", "1", TlbItemValue.Int), ("yyy", "True", TlbItemValue.Bool) }));
             tableListBox1.UpdateItems();
         }
     }

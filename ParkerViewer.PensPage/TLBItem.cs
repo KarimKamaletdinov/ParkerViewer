@@ -18,7 +18,7 @@ namespace ParkerViewer.PensPage
             set => label1.Text = value;
         }
 
-        public List<(string, string)> Items = new List<(string, string)>();
+        public List<(string, string, TlbItemValue)> Items = new List<(string, string, TlbItemValue)>();
 
         private bool _collapsed = false;
 
@@ -52,16 +52,42 @@ namespace ParkerViewer.PensPage
                         Name = "item"
                     });
 
-                    var box = new TextBox();
-                    box.AutoSize = false;
-                    box.Dock = DockStyle.Fill;
-                    box.TextAlign = HorizontalAlignment.Left;
-                    box.Text = item.Item2;
-                    box.Name = $"item{item.Item1}";
-                    box.ReadOnly = true;
-                    box.KeyDown += DataChanged;
-                    box.DoubleClick += (s, e) => box.ReadOnly = false;
-                    tableLayoutPanel1.Controls.Add(box);
+                    if (item.Item3 == TlbItemValue.String || item.Item3 == TlbItemValue.Int)
+                    {
+                        var box = new TextBox();
+                        box.AutoSize = false;
+                        box.Dock = DockStyle.Fill;
+                        box.TextAlign = HorizontalAlignment.Left;
+                        box.Text = item.Item2;
+                        box.Name = $"item{item.Item1}";
+                        box.ReadOnly = true;
+                        box.KeyDown += DataChanged;
+                        box.DoubleClick += (s, e) => box.ReadOnly = false;
+                        tableLayoutPanel1.Controls.Add(box);
+                    }
+
+                    else if (item.Item3 == TlbItemValue.Bool)
+                    {
+                        var box = new CheckBox();
+                        box.AutoSize = false;
+                        box.Dock = DockStyle.Fill;
+                        box.Checked = bool.Parse(item.Item2);
+                        box.Name = $"item{item.Item1}";
+                        box.CheckedChanged += ChangeData;
+                        tableLayoutPanel1.Controls.Add(box);
+                    }
+
+                    else if (item.Item3 == TlbItemValue.PenDetailColor)
+                    {
+                        var box = new ComboBox();
+                        box.AutoSize = false;
+                        box.Dock = DockStyle.Fill;
+                        box.Items.AddRange(new []{"золотой", "серебряный"});
+                        box.Name = $"item{item.Item1}";
+                        box.TextChanged += ChangeData;
+                        box.DropDownStyle = ComboBoxStyle.DropDownList;
+                        tableLayoutPanel1.Controls.Add(box);
+                    }
                 }
             }
 
@@ -87,19 +113,48 @@ namespace ParkerViewer.PensPage
         {
             if (e.KeyCode == Keys.Enter)
             {
-                ((TextBox) sender).ReadOnly = true;
+                ChangeData(sender, e);
+            }
+        }
 
-                int i = 0;
-                foreach (var item in Items.ToArray())
+        private void ChangeData(object sender, EventArgs e)
+        {
+            if (sender is TextBox t)
+            {
+                t.ReadOnly = true;
+            }
+
+            int i = 0;
+            foreach (var item in Items.ToArray())
+            {
+                if (item.Item1 == ((Control)sender).Name.Remove(0, 4))
                 {
-                    if (item.Item1 == ((Control) sender).Name.Remove(0, 4))
+                    if (item.Item3 == TlbItemValue.Int && !int.TryParse(((Control)sender).Text, out var r))
                     {
-                        Items.Remove(item);
-                        Items.Insert(i, (item.Item1, ((Control)sender).Text));
+                        MessageBox.Show($"Неприемлимое значение числа: {((Control)sender).Text}");
                     }
 
-                    i++;
+                    else if (item.Item3 == TlbItemValue.Bool)
+                    {
+                        Items.Remove(item);
+                        Items.Insert(i, (item.Item1, ((CheckBox)sender).Checked.ToString(), item.Item3));
+                        return;
+                    }
+
+                    else if(item.Item3 == TlbItemValue.PenDetailColor)
+                    {
+                        if(((Control)se))
+                        Items.Remove(item);
+                        Items.Insert(i, (item.Item1, ((Control)sender).Text, item.Item3));
+                        return;
+                    }
+
+                    Items.Remove(item);
+                    Items.Insert(i, (item.Item1, ((Control)sender).Text, item.Item3));
+                    return;
                 }
+
+                i++;
             }
         }
     }

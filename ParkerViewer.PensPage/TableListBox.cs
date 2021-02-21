@@ -12,7 +12,8 @@ namespace ParkerViewer.PensPage
 {
     public partial class TableListBox : UserControl
     {
-        public List<(string, (string, string)[])> Items = new List<(string, (string, string)[])>();
+        public List<(string, (string, string, TlbItemValue)[])> Items =
+            new List<(string, (string, string, TlbItemValue)[])>();
 
         public TableListBox()
         {
