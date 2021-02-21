@@ -47,7 +47,7 @@ namespace ParkerViewer.Models
         {
             get => _detailColor;
             set => _detailColor = value != "золотой" && value != "серебряный" ?
-                throw new Exception("Name can be only \"золотой\" or " +
+                throw new Exception("DetailColor can be only \"золотой\" or " +
                 "\"серебряный\"") : value;
         }
 
@@ -55,8 +55,8 @@ namespace ParkerViewer.Models
         {
             get => _writingType;
             set => _writingType = value != "шариковый" && value != "роллер"
-                || value == "перьевой" ? throw new Exception("Name can be only " +
-                    "\"золотой\" or \"серебряный\"") : value;
+                || value == "перьевой" ? throw new Exception("WritingType can be only " +
+                    "\"шариковый\", \"роллер\" or \"перьевой\"") : value;
         }
 
         public bool GoldPen
