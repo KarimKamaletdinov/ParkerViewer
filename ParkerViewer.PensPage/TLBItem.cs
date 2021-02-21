@@ -18,6 +18,8 @@ namespace ParkerViewer.PensPage
             set => label1.Text = value;
         }
 
+        public event Action<TlbItem, string> DataUpdated; 
+
         public List<(string, string, TlbItemValue)> Items = new List<(string, string, TlbItemValue)>();
 
         private bool _collapsed = false;
@@ -109,17 +111,21 @@ namespace ParkerViewer.PensPage
             {
                 button1.Text = "+";
 
-                var a = new object[tableLayoutPanel1.Controls.Count];
-                tableLayoutPanel1.Controls.CopyTo(a, 0);
+                //var a = new object[tableLayoutPanel1.Controls.Count];
+                //tableLayoutPanel1.Controls.CopyTo(a, 0);
 
-                foreach (var obj in a)
-                {
-                    var control = (Control) obj;
-                    if (control.Name.StartsWith("item"))
-                    {
-                        tableLayoutPanel1.Controls.Remove(control);
-                    }
-                }
+                //foreach (var obj in a)
+                //{
+                //    var control = (Control) obj;
+                //    if (control.Name.StartsWith("item"))
+                //    {
+                //        tableLayoutPanel1.Controls.Remove(control);
+                //    }
+                //}
+
+                tableLayoutPanel1.Controls.Clear();
+                tableLayoutPanel1.Controls.Add(label1);
+                tableLayoutPanel1.Controls.Add(button1);
             }
         }
 
@@ -143,6 +149,8 @@ namespace ParkerViewer.PensPage
             {
                 if (item.Item1 == ((Control)sender).Name.Remove(0, 4))
                 {
+                    DataUpdated(this, ((Control)sender).Name.Remove(0, 4));
+
                     if (item.Item3 == TlbItemValue.Int && !int.TryParse(((Control)sender).Text, out var r))
                     {
                         MessageBox.Show($"Неприемлимое значение числа: {((Control)sender).Text}");
