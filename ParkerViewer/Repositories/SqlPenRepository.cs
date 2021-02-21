@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Dapper;
-using ParkerViewer.Behaviours;
 using System.Data.SqlClient;
 using System.Linq;
 using Dapper.Contrib.Extensions;
+using ParkerViewer.Models;
 
 namespace ParkerViewer.Repositories
 {
