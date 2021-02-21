@@ -40,7 +40,7 @@ namespace ParkerViewer.PensPage
             {
                 button1.Text = "-";
 
-                foreach (var item in Items)
+                foreach (var item in Items.ToArray())
                 {
                     tableLayoutPanel1.Controls.Add(new TextBox()
                     {
@@ -84,7 +84,21 @@ namespace ParkerViewer.PensPage
                         box.Dock = DockStyle.Fill;
                         box.Items.AddRange(new []{"золотой", "серебряный"});
                         box.Name = $"item{item.Item1}";
-                        box.TextChanged += ChangeData;
+                        box.Text = item.Item2;
+                        box.SelectionChangeCommitted += ChangeData;
+                        box.DropDownStyle = ComboBoxStyle.DropDownList;
+                        tableLayoutPanel1.Controls.Add(box);
+                    }
+
+                    else if (item.Item3 == TlbItemValue.PenWritingType)
+                    {
+                        var box = new ComboBox();
+                        box.AutoSize = false;
+                        box.Dock = DockStyle.Fill;
+                        box.Items.AddRange(new[] { "шариковый", "роллер", "перьевой" });
+                        box.Name = $"item{item.Item1}";
+                        box.Text = item.Item2;
+                        box.SelectionChangeCommitted += ChangeData;
                         box.DropDownStyle = ComboBoxStyle.DropDownList;
                         tableLayoutPanel1.Controls.Add(box);
                     }
@@ -138,14 +152,6 @@ namespace ParkerViewer.PensPage
                     {
                         Items.Remove(item);
                         Items.Insert(i, (item.Item1, ((CheckBox)sender).Checked.ToString(), item.Item3));
-                        return;
-                    }
-
-                    else if(item.Item3 == TlbItemValue.PenDetailColor)
-                    {
-                        if(((Control)se))
-                        Items.Remove(item);
-                        Items.Insert(i, (item.Item1, ((Control)sender).Text, item.Item3));
                         return;
                     }
 
