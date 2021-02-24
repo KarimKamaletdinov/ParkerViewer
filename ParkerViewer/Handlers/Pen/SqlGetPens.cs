@@ -18,7 +18,7 @@ namespace ParkerViewer.Handlers.Pen
                models.Add(new PenDto()
                {
                    Id = model.Id,
-                   CollectionId = model.CollectionId,
+                   Collection = model.Collection,
                    DetailColor = model.DetailColor,
                    Engraving = model.Engraving,
                    ForMan = model.ForMan,

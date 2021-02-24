@@ -18,6 +18,8 @@ namespace ParkerViewer.PensPage
             set => label1.Text = value;
         }
 
+        public event Action<TlbItem, string> DataUpdated; 
+
         public List<(string, string, TlbItemValue)> Items = new List<(string, string, TlbItemValue)>();
 
         private bool _collapsed = false;
@@ -40,7 +42,7 @@ namespace ParkerViewer.PensPage
             {
                 button1.Text = "-";
 
-                foreach (var item in Items)
+                foreach (var item in Items.ToArray())
                 {
                     tableLayoutPanel1.Controls.Add(new TextBox()
                     {
@@ -84,7 +86,21 @@ namespace ParkerViewer.PensPage
                         box.Dock = DockStyle.Fill;
                         box.Items.AddRange(new []{"золотой", "серебряный"});
                         box.Name = $"item{item.Item1}";
-                        box.TextChanged += ChangeData;
+                        box.Text = item.Item2;
+                        box.SelectionChangeCommitted += ChangeData;
+                        box.DropDownStyle = ComboBoxStyle.DropDownList;
+                        tableLayoutPanel1.Controls.Add(box);
+                    }
+
+                    else if (item.Item3 == TlbItemValue.PenWritingType)
+                    {
+                        var box = new ComboBox();
+                        box.AutoSize = false;
+                        box.Dock = DockStyle.Fill;
+                        box.Items.AddRange(new[] { "шариковый", "роллер", "перьевой" });
+                        box.Name = $"item{item.Item1}";
+                        box.Text = item.Item2;
+                        box.SelectionChangeCommitted += ChangeData;
                         box.DropDownStyle = ComboBoxStyle.DropDownList;
                         tableLayoutPanel1.Controls.Add(box);
                     }
@@ -95,17 +111,21 @@ namespace ParkerViewer.PensPage
             {
                 button1.Text = "+";
 
-                var a = new object[tableLayoutPanel1.Controls.Count];
-                tableLayoutPanel1.Controls.CopyTo(a, 0);
+                //var a = new object[tableLayoutPanel1.Controls.Count];
+                //tableLayoutPanel1.Controls.CopyTo(a, 0);
 
-                foreach (var obj in a)
-                {
-                    var control = (Control) obj;
-                    if (control.Name.StartsWith("item"))
-                    {
-                        tableLayoutPanel1.Controls.Remove(control);
-                    }
-                }
+                //foreach (var obj in a)
+                //{
+                //    var control = (Control) obj;
+                //    if (control.Name.StartsWith("item"))
+                //    {
+                //        tableLayoutPanel1.Controls.Remove(control);
+                //    }
+                //}
+
+                tableLayoutPanel1.Controls.Clear();
+                tableLayoutPanel1.Controls.Add(label1);
+                tableLayoutPanel1.Controls.Add(button1);
             }
         }
 
@@ -129,6 +149,8 @@ namespace ParkerViewer.PensPage
             {
                 if (item.Item1 == ((Control)sender).Name.Remove(0, 4))
                 {
+                    DataUpdated(this, ((Control)sender).Name.Remove(0, 4));
+
                     if (item.Item3 == TlbItemValue.Int && !int.TryParse(((Control)sender).Text, out var r))
                     {
                         MessageBox.Show($"Неприемлимое значение числа: {((Control)sender).Text}");
@@ -138,14 +160,6 @@ namespace ParkerViewer.PensPage
                     {
                         Items.Remove(item);
                         Items.Insert(i, (item.Item1, ((CheckBox)sender).Checked.ToString(), item.Item3));
-                        return;
-                    }
-
-                    else if(item.Item3 == TlbItemValue.PenDetailColor)
-                    {
-                        if(((Control)se))
-                        Items.Remove(item);
-                        Items.Insert(i, (item.Item1, ((Control)sender).Text, item.Item3));
                         return;
                     }
 

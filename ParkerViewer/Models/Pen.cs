@@ -5,7 +5,7 @@ namespace ParkerViewer.Models
     public class Pen
     {
         private int _id;
-        private int _collectionId;
+        private string _collection;
         private int _price;
         private string _name;
         private string _detailColor;
@@ -22,11 +22,11 @@ namespace ParkerViewer.Models
                 "negative") : value;
         }
 
-        public int CollectionId
+        public string Collection
         {
-            get => _collectionId;
-            set => _collectionId = value <= 0 ? throw new Exception("CollectionId " +
-                "can not be 0 or negative") : value;
+            get => _collection;
+            set => _collection = value ?? throw new Exception("Collection " +
+                    "can not be 0 or negative");
         }
 
         public int Price
@@ -39,15 +39,15 @@ namespace ParkerViewer.Models
         public string Name
         {
             get => _name;
-            set => _name = value == null ? throw new Exception("Name can not" +
-                " be null") : value;
+            set => _name = value ?? throw new Exception("Name can not" +
+                " be null");
         }
 
         public string DetailColor
         {
             get => _detailColor;
             set => _detailColor = value != "золотой" && value != "серебряный" ?
-                throw new Exception("Name can be only \"золотой\" or " +
+                throw new Exception("DetailColor can be only \"золотой\" or " +
                 "\"серебряный\"") : value;
         }
 
@@ -55,8 +55,8 @@ namespace ParkerViewer.Models
         {
             get => _writingType;
             set => _writingType = value != "шариковый" && value != "роллер"
-                || value == "перьевой" ? throw new Exception("Name can be only " +
-                    "\"золотой\" or \"серебряный\"") : value;
+                || value == "перьевой" ? throw new Exception("WritingType can be only " +
+                    "\"шариковый\", \"роллер\" or \"перьевой\"") : value;
         }
 
         public bool GoldPen

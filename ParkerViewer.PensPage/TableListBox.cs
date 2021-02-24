@@ -12,8 +12,9 @@ namespace ParkerViewer.PensPage
 {
     public partial class TableListBox : UserControl
     {
-        public List<(string, (string, string, TlbItemValue)[])> Items =
-            new List<(string, (string, string, TlbItemValue)[])>();
+        public List<TlbItem> Items = new List<TlbItem>();
+
+        public event Action<TlbItem> ItemUpdated; 
 
         public TableListBox()
         {
@@ -30,13 +31,13 @@ namespace ParkerViewer.PensPage
             Controls.Clear();
             foreach (var item in Items)
             {
-                Controls.Add(new TlbItem()
-                {
-                    Header = item.Item1,
-                    Items = item.Item2.ToList(),
-                    Dock = DockStyle.Top
-                });
+                Controls.Add(item);
             }
+        }
+
+        private void DataUpdated(TlbItem sender, string fieldName)
+        {
+            ItemUpdated(sender);
         }
     }
 }

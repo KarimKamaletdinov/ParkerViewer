@@ -28,7 +28,7 @@ namespace ParkerViewer.Repositories
             new SqlConnection(_connectionString).Insert(new PenDto()
             {
                 Id = pen.Id,
-                CollectionId = pen.CollectionId,
+                CollectionId = pen.Collection,
                 DetailColor = pen.DetailColor,
                 Engraving = pen.Engraving,
                 ForMan = pen.ForMan,
@@ -45,7 +45,7 @@ namespace ParkerViewer.Repositories
             new SqlConnection(_connectionString).Update(new PenDto()
             {
                 Id = pen.Id,
-                CollectionId = pen.CollectionId,
+                CollectionId = pen.Collection,
                 DetailColor = pen.DetailColor,
                 Engraving = pen.Engraving,
                 ForMan = pen.ForMan,
@@ -72,7 +72,7 @@ namespace ParkerViewer.Repositories
             {
                 result.Add(new Pen(){      
                         Id = pen.Id,
-                        CollectionId = pen.CollectionId,
+                        Collection = pen.CollectionId,
                         DetailColor = pen.DetailColor,
                         Engraving = pen.Engraving,
                         ForMan = pen.ForMan,
@@ -92,7 +92,7 @@ namespace ParkerViewer.Repositories
         {
             [Key]
             public int Id { get; set; }
-            public int CollectionId { get; set; }
+            public string CollectionId { get; set; }
             public int Price { get; set; }
             public string Name { get; set; }
             public string DetailColor { get; set; }
