@@ -41,7 +41,7 @@ namespace ParkerViewer.PensPage
                 item.Items.Add(("Цена", pen.Price.ToString(), TlbItemValue.Int));
                 item.Items.Add(("Цвет деталей", pen.DetailColor, TlbItemValue.PenDetailColor));
                 item.Items.Add(("Тип пишущего узла", pen.WritingType, TlbItemValue.PenDetailColor));
-                item.Items.Add(("Коллекция", pen.CollectionId.ToString(), TlbItemValue.Int));
+                item.Items.Add(("Коллекция", pen.Collection.ToString(), TlbItemValue.Int));
                 item.Items.Add(("Гравировка", pen.Engraving.ToString(), TlbItemValue.Bool));
                 item.Items.Add(("Золотое перо", pen.GoldPen.ToString(), TlbItemValue.Bool));
                 item.Items.Add(("Для мужчин", pen.ForMan.ToString(), TlbItemValue.Bool));

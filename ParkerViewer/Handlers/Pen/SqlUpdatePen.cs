@@ -11,7 +11,7 @@ namespace ParkerViewer.Handlers.Pen
             new SqlPenRepository().Update(new Models.Pen()
             {
                 Id = command.Pen.Id,
-                CollectionId = command.Pen.CollectionId,
+                Collection = command.Pen.Collection,
                 DetailColor = command.Pen.DetailColor,
                 Engraving = command.Pen.Engraving,
                 ForMan = command.Pen.ForMan,

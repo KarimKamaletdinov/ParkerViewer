@@ -3,7 +3,7 @@
     public class PenDto
     {
         public int Id { get; set; }
-        public int CollectionId { get; set; }
+        public string Collection { get; set; }
         public int Price { get; set; }
         public string Name { get; set; }
         public string DetailColor { get; set; }

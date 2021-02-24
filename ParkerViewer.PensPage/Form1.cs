@@ -23,7 +23,7 @@ namespace ParkerViewer.PensPage
             var PensControl = new PensPageControl();
             PensControl.Pens.Add(new PenDto()
             {
-                CollectionId = 1,
+                Collection = "1",
                 DetailColor = "золотой",
                 Engraving = false,
                 ForMan = true,
