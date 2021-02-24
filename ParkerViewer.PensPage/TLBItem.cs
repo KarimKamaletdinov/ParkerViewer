@@ -20,7 +20,8 @@ namespace ParkerViewer.PensPage
 
         public event Action<TlbItem, string> DataUpdated; 
 
-        public List<(string, string, TlbItemValue)> Items = new List<(string, string, TlbItemValue)>();
+        public List<(string, string, TlbItemValue, string[])> Items =
+            new List<(string, string, TlbItemValue, string[])>();
 
         private bool _collapsed = false;
 
@@ -79,29 +80,16 @@ namespace ParkerViewer.PensPage
                         tableLayoutPanel1.Controls.Add(box);
                     }
 
-                    else if (item.Item3 == TlbItemValue.PenDetailColor)
+                    else if (item.Item3 == TlbItemValue.Enum)
                     {
                         var box = new ComboBox();
                         box.AutoSize = false;
                         box.Dock = DockStyle.Fill;
                         box.Name = $"item{item.Item1}";
-                        box.Items.AddRange(new object[] { "золотой", "серебряный" });
+                        box.Items.AddRange(item.Item4);
                         box.DropDownStyle = ComboBoxStyle.DropDownList;
                         box.Text = item.Item2;
-                        box.TextChanged += ChangeData;
-                        tableLayoutPanel1.Controls.Add(box);
-                    }
-
-                    else if (item.Item3 == TlbItemValue.PenWritingType)
-                    {
-                        var box = new ComboBox();
-                        box.AutoSize = false;
-                        box.Dock = DockStyle.Fill;
-                        box.Items.AddRange(new object[] { "шариковый", "роллер", "перьевой" });
-                        box.Name = $"item{item.Item1}";
-                        box.DropDownStyle = ComboBoxStyle.DropDownList;
-                        box.SelectedItem = item.Item2;
-                        box.TextChanged += ChangeData;
+                        box.SelectedIndexChanged += ChangeData;
                         tableLayoutPanel1.Controls.Add(box);
                     }
                 }
@@ -149,36 +137,40 @@ namespace ParkerViewer.PensPage
             {
                 if (item.Item1 == ((Control)sender).Name.Remove(0, 4))
                 {
-                    DataUpdated(this, ((Control)sender).Name.Remove(0, 4));
-
                     if (item.Item3 == TlbItemValue.Int && !int.TryParse(((Control)sender).Text, out var r))
                     {
                         MessageBox.Show($"Неприемлимое значение числа: {((Control)sender).Text}");
+                        return;
                     }
 
                     else if (item.Item3 == TlbItemValue.Bool)
                     {
                         Items.Remove(item);
-                        Items.Insert(i, (item.Item1, ((CheckBox)sender).Checked.ToString(), item.Item3));
+                        Items.Insert(i, (item.Item1, ((CheckBox)sender).Checked.ToString(), item.Item3,
+                                item.Item4));
+                        DataUpdated(this, ((Control)sender).Name.Remove(0, 4));
                         return;
                     }
 
-                    else if (item.Item3 == TlbItemValue.PenDetailColor)
-                    {
-                        Items.Remove(item);
-                        Items.Insert(i, (item.Item1, ((ComboBox)sender).SelectedItem.ToString(), item.Item3));
-                        return;
-                    }
+                    //else if (item.Item3 == TlbItemValue.PenDetailColor)
+                    //{
+                    //    Items.Remove(item);
+                    //    Items.Insert(i, (item.Item1, ((ComboBox)sender).SelectedItem.ToString(), item.Item3));
+                    //    DataUpdated(this, ((Control)sender).Name.Remove(0, 4)); 
+                    //    return;
+                    //}
 
-                    else if (item.Item3 == TlbItemValue.PenWritingType)
-                    {
-                        Items.Remove(item);
-                        Items.Insert(i, (item.Item1, ((ComboBox)sender).SelectedItem.ToString(), item.Item3));
-                        return;
-                    }
+                    //else if (item.Item3 == TlbItemValue.PenWritingType)
+                    //{
+                    //    Items.Remove(item);
+                    //    Items.Insert(i, (item.Item1, ((ComboBox)sender).SelectedItem.ToString(), item.Item3));
+                    //    DataUpdated(this, ((Control)sender).Name.Remove(0, 4));
+                    //    return;
+                    //}
 
                     Items.Remove(item);
-                    Items.Insert(i, (item.Item1, ((Control)sender).Text, item.Item3));
+                    Items.Insert(i, (item.Item1, ((Control)sender).Text, item.Item3, item.Item4));
+                    DataUpdated(this, ((Control)sender).Name.Remove(0, 4));
                     return;
                 }
 
