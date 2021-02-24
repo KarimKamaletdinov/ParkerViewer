@@ -25,7 +25,7 @@ namespace ParkerViewer.Repositories
 
         public void Insert(Pen pen)
         {
-            new SqlConnection(_connectionString).Insert(new PenDto()
+            new SqlConnection(_connectionString).Insert(new SqlPenDto()
             {
                 Id = pen.Id,
                 CollectionId = pen.Collection,
@@ -42,7 +42,7 @@ namespace ParkerViewer.Repositories
 
         public void Update(Pen pen)
         {
-            new SqlConnection(_connectionString).Update(new PenDto()
+            new SqlConnection(_connectionString).Update(new SqlPenDto()
             {
                 Id = pen.Id,
                 CollectionId = pen.Collection,
@@ -59,12 +59,12 @@ namespace ParkerViewer.Repositories
 
         public void Delete(int id)
         {
-            new SqlConnection(_connectionString).Delete(new PenDto() {Id = id});
+            new SqlConnection(_connectionString).Delete(new SqlPenDto() {Id = id});
         }
 
         public Pen[] GetAll()
         {
-            var a = new SqlConnection(_connectionString).Query<PenDto>("SELECT * FROM Models");
+            var a = new SqlConnection(_connectionString).Query<SqlPenDto>("SELECT * FROM Models");
 
             var result = new List<Pen>();
 
@@ -87,8 +87,8 @@ namespace ParkerViewer.Repositories
             return result.ToArray();
         }
 
-        [Table("Models")]
-        private class PenDto
+        [Table("Pens")]
+        private class SqlPenDto
         {
             [Key]
             public int Id { get; set; }
