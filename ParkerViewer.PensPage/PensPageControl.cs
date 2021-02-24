@@ -37,15 +37,21 @@ namespace ParkerViewer.PensPage
                 var item = new TlbItem();
                 item.Name = pen.Id.ToString();
                 item.Header = pen.Name;
-                item.Items.Add(("Название", pen.Name, TlbItemValue.Int));
-                item.Items.Add(("Цена", pen.Price.ToString(), TlbItemValue.Int));
-                item.Items.Add(("Цвет деталей", pen.DetailColor, TlbItemValue.PenDetailColor));
-                item.Items.Add(("Тип пишущего узла", pen.WritingType, TlbItemValue.PenWritingType));
-                item.Items.Add(("Коллекция", pen.Collection, TlbItemValue.Int));
-                item.Items.Add(("Гравировка", pen.Engraving.ToString(), TlbItemValue.Bool));
-                item.Items.Add(("Золотое перо", pen.GoldPen.ToString(), TlbItemValue.Bool));
-                item.Items.Add(("Для мужчин", pen.ForMan.ToString(), TlbItemValue.Bool));
-                item.Items.Add(("Для женщин", pen.ForWoman.ToString(), TlbItemValue.Bool));
+                item.Items.Add(("Название", pen.Name, TlbItemValue.String, null));
+                item.Items.Add(("Цена", pen.Price.ToString(), TlbItemValue.Int, null));
+                item.Items.Add(("Цвет деталей", pen.DetailColor, TlbItemValue.Enum, new []{"золотой", 
+                    "серебряный"}));
+                item.Items.Add(("Тип пишущего узла", pen.WritingType, TlbItemValue.Enum, new[]
+                {
+                    "шариковый",
+                    "роллер",
+                    "перьевой"
+                }));
+                item.Items.Add(("Коллекция", pen.Collection, TlbItemValue.String, null));
+                item.Items.Add(("Гравировка", pen.Engraving.ToString(), TlbItemValue.Bool, null));
+                item.Items.Add(("Золотое перо", pen.GoldPen.ToString(), TlbItemValue.Bool, null));
+                item.Items.Add(("Для мужчин", pen.ForMan.ToString(), TlbItemValue.Bool, null));
+                item.Items.Add(("Для женщин", pen.ForWoman.ToString(), TlbItemValue.Bool, null));
                 item.Dock = DockStyle.Top;
 
                 tableListBox1.Items.Add(item);

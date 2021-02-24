@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using System.Text;
 using Newtonsoft.Json;
 using ParkerViewer.Abstractions;
 using ParkerViewer.Abstractions.Commands;
@@ -17,6 +18,7 @@ namespace ParkerViewer.WebClients.Pen
         public void Execute(UpdatePen command)
         {
             var client = new WebClient();
+            client.Encoding = Encoding.UTF8;
             client.Headers.Add("content-type", "application/json");
             client.UploadString($"{_baseUrl}/Pen/{command.Pen.Id}", "PUT",
                 JsonConvert.SerializeObject(command.Pen));

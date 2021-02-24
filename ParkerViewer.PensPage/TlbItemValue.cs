@@ -5,7 +5,6 @@
         Int,
         String,
         Bool,
-        PenDetailColor,
-        PenWritingType
+        Enum
     }
 }
