@@ -10,19 +10,19 @@ namespace ParkerViewer.Gui.Presenters
 {
     public class PenPresenter
     {
-        public ICommandHandler<InsertPenCommand> Insert;
+        public ICommandHandler<InsertPen> Insert;
 
-        public ICommandHandler<UpdatePenCommand> Update;
+        public ICommandHandler<UpdatePen> Update;
 
-        public ICommandHandler<DeletePenCommand> Delete;
+        public ICommandHandler<DeletePen> Delete;
 
-        public IQueryHandler<GetPensQuery, PenDto[]> Get;
+        public IQueryHandler<GetPens, PenDto[]> Get;
 
         public PenPresenter(
-            ICommandHandler<InsertPenCommand> insert,
-            ICommandHandler<UpdatePenCommand> update,
-            ICommandHandler<DeletePenCommand> delete,
-            IQueryHandler<GetPensQuery, PenDto[]> get)
+            ICommandHandler<InsertPen> insert,
+            ICommandHandler<UpdatePen> update,
+            ICommandHandler<DeletePen> delete,
+            IQueryHandler<GetPens, PenDto[]> get)
         {
             Insert = insert;
             Update = update;
@@ -40,22 +40,22 @@ namespace ParkerViewer.Gui.Presenters
 
         private void UpdateView(IPenView view)
         {
-            view.Pens = new List<PenDto>(Get.Execute(new GetPensQuery()).ToList());
+            view.Pens = new List<PenDto>(Get.Execute(new GetPens()).ToList());
         }
 
         private void InsertPen(PenDto pen)
         {
-            Insert.Execute(new InsertPenCommand(){Pen = pen});
+            Insert.Execute(new InsertPen(){Pen = pen});
         }
 
         private void UpdatePen(PenDto pen)
         {
-            Update.Execute(new UpdatePenCommand(){Pen = pen});
+            Update.Execute(new UpdatePen(){Pen = pen});
         }
 
         private void DeletePen(int penId)
         {
-            Delete.Execute(new DeletePenCommand(){PenId = penId});
+            Delete.Execute(new DeletePen(){PenId = penId});
         }
     }
 }

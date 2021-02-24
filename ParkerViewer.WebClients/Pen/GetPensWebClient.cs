@@ -1,4 +1,6 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
+using System.Text;
 using Newtonsoft.Json;
 using ParkerViewer.Abstractions;
 using ParkerViewer.Abstractions.Commands;
@@ -7,7 +9,7 @@ using ParkerViewer.Abstractions.Queries;
 
 namespace ParkerViewer.WebClients.Pen
 {
-    public class GetPensWebClient : IQueryHandler<GetPensQuery, PenDto[]>
+    public class GetPensWebClient : IQueryHandler<GetPens, PenDto[]>
     {
         private readonly string _baseUrl;
 
@@ -16,10 +18,14 @@ namespace ParkerViewer.WebClients.Pen
             _baseUrl = baseUrl;
         }
 
-        public PenDto[] Execute(GetPensQuery query)
+        public PenDto[] Execute(GetPens query)
         {
-            return JsonConvert.DeserializeObject<PenDto[]>(
-                new WebClient().DownloadString($"{_baseUrl}/Pen"));
+            var client = new WebClient();
+            client.Encoding = Encoding.UTF8;
+            var s = client.DownloadString($"{_baseUrl}/Pen");
+            Console.WriteLine(s);
+            var result = JsonConvert.DeserializeObject<PenDto[]>(s);
+            return result;
         }
     }
 }

@@ -2,8 +2,8 @@
 
 namespace ParkerViewer.Abstractions.Commands
 {
-    public class InsertPenCommand : Command
+    public class UpdatePen : Command
     {
-        public PenDto Pen {get; set; }
+        public PenDto Pen { get; set; }
     }
 }

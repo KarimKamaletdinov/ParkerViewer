@@ -4,11 +4,18 @@ using ParkerViewer.Repositories;
 
 namespace ParkerViewer.Handlers.Pen
 {
-    public class DeletePenHandler : ICommandHandler<DeletePenCommand>
+    public class DeletePenHandler : ICommandHandler<DeletePen>
     {
-        public void Execute(DeletePenCommand command)
+        private readonly SqlPenRepository _repository;
+
+        public DeletePenHandler(SqlPenRepository repository)
         {
-            new SqlPenRepository().Delete(command.PenId);
+            _repository = repository;
+        }
+
+        public void Execute(DeletePen command)
+        {
+            _repository.Delete(command.PenId);
         }
     }
 }

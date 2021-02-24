@@ -4,11 +4,18 @@ using ParkerViewer.Repositories;
 
 namespace ParkerViewer.Handlers.Pen
 {
-    public class SqlUpdatePen : ICommandHandler<UpdatePenCommand>
+    public class UpdatePenHandler : ICommandHandler<UpdatePen>
     {
-        public void Execute(UpdatePenCommand command)
+        private readonly SqlPenRepository _repository;
+
+        public UpdatePenHandler(SqlPenRepository repository)
         {
-            new SqlPenRepository().Update(new Models.Pen()
+            _repository = repository;
+        }
+
+        public void Execute(UpdatePen command)
+        {
+            _repository.Update(new Models.Pen()
             {
                 Id = command.Pen.Id,
                 Collection = command.Pen.Collection,
