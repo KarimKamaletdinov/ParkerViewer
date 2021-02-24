@@ -32,12 +32,8 @@ namespace ParkerViewer.PensPage
             foreach (var item in Items)
             {
                 Controls.Add(item);
+                item.DataUpdated += (a, b) => ItemUpdated(a);
             }
-        }
-
-        private void DataUpdated(TlbItem sender, string fieldName)
-        {
-            ItemUpdated(sender);
         }
     }
 }

@@ -5,7 +5,7 @@ using ParkerViewer.Abstractions.Commands;
 
 namespace ParkerViewer.WebClients.Pen
 {
-    public class UpdatePenWebClient : ICommandHandler<UpdatePenCommand>
+    public class UpdatePenWebClient : ICommandHandler<UpdatePen>
     {
         private readonly string _baseUrl;
 
@@ -14,11 +14,11 @@ namespace ParkerViewer.WebClients.Pen
             _baseUrl = baseUrl;
         }
 
-        public void Execute(UpdatePenCommand command)
+        public void Execute(UpdatePen command)
         {
             var client = new WebClient();
             client.Headers.Add("content-type", "application/json");
-            client.UploadString($"{_baseUrl}/Pen/{command.Pen.Id}", "Put",
+            client.UploadString($"{_baseUrl}/Pen/{command.Pen.Id}", "PUT",
                 JsonConvert.SerializeObject(command.Pen));
         }
 

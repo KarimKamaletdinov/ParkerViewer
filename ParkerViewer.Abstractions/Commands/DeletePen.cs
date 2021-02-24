@@ -1,6 +1,6 @@
 ﻿namespace ParkerViewer.Abstractions.Commands
 {
-    public class DeletePenCommand : Command
+    public class DeletePen : Command
     {
         public int PenId;
     }

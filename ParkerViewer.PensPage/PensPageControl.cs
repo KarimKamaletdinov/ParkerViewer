@@ -40,8 +40,8 @@ namespace ParkerViewer.PensPage
                 item.Items.Add(("Название", pen.Name, TlbItemValue.Int));
                 item.Items.Add(("Цена", pen.Price.ToString(), TlbItemValue.Int));
                 item.Items.Add(("Цвет деталей", pen.DetailColor, TlbItemValue.PenDetailColor));
-                item.Items.Add(("Тип пишущего узла", pen.WritingType, TlbItemValue.PenDetailColor));
-                item.Items.Add(("Коллекция", pen.Collection.ToString(), TlbItemValue.Int));
+                item.Items.Add(("Тип пишущего узла", pen.WritingType, TlbItemValue.PenWritingType));
+                item.Items.Add(("Коллекция", pen.Collection, TlbItemValue.Int));
                 item.Items.Add(("Гравировка", pen.Engraving.ToString(), TlbItemValue.Bool));
                 item.Items.Add(("Золотое перо", pen.GoldPen.ToString(), TlbItemValue.Bool));
                 item.Items.Add(("Для мужчин", pen.ForMan.ToString(), TlbItemValue.Bool));
@@ -53,14 +53,39 @@ namespace ParkerViewer.PensPage
             tableListBox1.UpdateItems();
         }
 
-        private void TableListBox1Updated(TlbItem obj)
-        {
-            
-        }
-
         private void PensPageControl_Load(object sender, EventArgs e)
         {
             tableListBox1.ItemUpdated += TableListBox1Updated;
+        }
+
+        private void TableListBox1Updated(TlbItem obj)
+        {
+            UpdatePen(new PenDto()
+            {
+                Id = int.Parse(obj.Name),
+                Name = GetItem("Название", obj),
+                Collection = GetItem("Коллекция", obj),
+                WritingType = GetItem("Тип пишущего узла", obj),
+                DetailColor = GetItem("Цвет деталей", obj),
+                Engraving = bool.Parse(GetItem("Гравировка", obj)),
+                GoldPen = bool.Parse(GetItem("Золотое перо", obj)),
+                ForMan = bool.Parse(GetItem("Для мужчин", obj)),
+                ForWoman = bool.Parse(GetItem("Для женщин", obj)),
+                Price = int.Parse(GetItem("Цена", obj)),
+            });
+        }
+
+        private string GetItem(string name, TlbItem item)
+        {
+            foreach (var field in item.Items)
+            {
+                if (field.Item1.ToLower() == name.ToLower())
+                {
+                    return field.Item2;
+                }
+            }
+
+            throw new Exception($"Поле \"{name}\" не найдено!");
         }
     }
 }

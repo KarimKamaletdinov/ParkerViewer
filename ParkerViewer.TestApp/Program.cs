@@ -11,22 +11,22 @@ namespace ParkerViewer.TestApp
     {
         private static void Main(string[] args)
         {
-            new InsertPenWebClient().Execute(new InsertPenCommand()
+            new InsertPenWebClient().Execute(new InsertPen()
             {
                 Pen = JsonConvert.
                     DeserializeObject<PenDto>(Console.ReadLine())
             });
-            new UpdatePenWebClient().Execute(new UpdatePenCommand()
+            new UpdatePenWebClient().Execute(new UpdatePen()
             {
                 Pen = JsonConvert.
                     DeserializeObject<PenDto>(Console.ReadLine())
             });
-            new DeletePenWebClient().Execute(new DeletePenCommand()
+            new DeletePenWebClient().Execute(new DeletePen()
             {
                 PenId = int.Parse(Console.ReadLine())
             });
             Console.WriteLine(JsonConvert.SerializeObject(
-                new GetPensWebClient().Execute(new GetPensQuery())));
+                new GetPensWebClient().Execute(new GetPens())));
         }
     }
 }

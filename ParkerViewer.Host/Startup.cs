@@ -10,6 +10,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ParkerViewer.Abstractions;
+using ParkerViewer.Abstractions.Dtos;
+using ParkerViewer.Abstractions.Queries;
+using ParkerViewer.Handlers.Pen;
+using ParkerViewer.Repositories;
 
 namespace ParkerViewer.Host
 {
@@ -26,6 +31,8 @@ namespace ParkerViewer.Host
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddScoped<SqlPenRepository>();
+            services.AddScoped<IQueryHandler<GetPens, PenDto[]>, GetPensHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

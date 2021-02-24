@@ -7,7 +7,7 @@ using RestSharp;
 
 namespace ParkerViewer.WebClients.Pen
 {
-    public class InsertPenWebClient : ICommandHandler<InsertPenCommand>
+    public class InsertPenWebClient : ICommandHandler<InsertPen>
     {
         private readonly string _baseUrl;
 
@@ -16,7 +16,7 @@ namespace ParkerViewer.WebClients.Pen
             _baseUrl = baseUrl;
         }
 
-        public void Execute(InsertPenCommand command)
+        public void Execute(InsertPen command)
         {
             var client = new WebClient();
             client.Headers.Add("content-type", "application/json");

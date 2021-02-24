@@ -2,7 +2,7 @@
 
 namespace ParkerViewer.Abstractions.Queries
 {
-    public class GetPensQuery : Query<PenDto[]>
+    public class GetPens : Query<PenDto[]>
     {
 
     }

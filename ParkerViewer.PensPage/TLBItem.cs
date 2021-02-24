@@ -84,11 +84,11 @@ namespace ParkerViewer.PensPage
                         var box = new ComboBox();
                         box.AutoSize = false;
                         box.Dock = DockStyle.Fill;
-                        box.Items.AddRange(new []{"золотой", "серебряный"});
                         box.Name = $"item{item.Item1}";
-                        box.Text = item.Item2;
-                        box.SelectionChangeCommitted += ChangeData;
+                        box.Items.AddRange(new object[] { "золотой", "серебряный" });
                         box.DropDownStyle = ComboBoxStyle.DropDownList;
+                        box.Text = item.Item2;
+                        box.TextChanged += ChangeData;
                         tableLayoutPanel1.Controls.Add(box);
                     }
 
@@ -97,11 +97,11 @@ namespace ParkerViewer.PensPage
                         var box = new ComboBox();
                         box.AutoSize = false;
                         box.Dock = DockStyle.Fill;
-                        box.Items.AddRange(new[] { "шариковый", "роллер", "перьевой" });
+                        box.Items.AddRange(new object[] { "шариковый", "роллер", "перьевой" });
                         box.Name = $"item{item.Item1}";
-                        box.Text = item.Item2;
-                        box.SelectionChangeCommitted += ChangeData;
                         box.DropDownStyle = ComboBoxStyle.DropDownList;
+                        box.SelectedItem = item.Item2;
+                        box.TextChanged += ChangeData;
                         tableLayoutPanel1.Controls.Add(box);
                     }
                 }
@@ -160,6 +160,20 @@ namespace ParkerViewer.PensPage
                     {
                         Items.Remove(item);
                         Items.Insert(i, (item.Item1, ((CheckBox)sender).Checked.ToString(), item.Item3));
+                        return;
+                    }
+
+                    else if (item.Item3 == TlbItemValue.PenDetailColor)
+                    {
+                        Items.Remove(item);
+                        Items.Insert(i, (item.Item1, ((ComboBox)sender).SelectedItem.ToString(), item.Item3));
+                        return;
+                    }
+
+                    else if (item.Item3 == TlbItemValue.PenWritingType)
+                    {
+                        Items.Remove(item);
+                        Items.Insert(i, (item.Item1, ((ComboBox)sender).SelectedItem.ToString(), item.Item3));
                         return;
                     }
 

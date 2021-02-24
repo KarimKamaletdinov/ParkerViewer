@@ -5,7 +5,7 @@ using ParkerViewer.Abstractions.Commands;
 
 namespace ParkerViewer.WebClients.Pen
 {
-    public class DeletePenWebClient : ICommandHandler<DeletePenCommand>
+    public class DeletePenWebClient : ICommandHandler<DeletePen>
     {
         private readonly string _baseUrl;
 
@@ -14,7 +14,7 @@ namespace ParkerViewer.WebClients.Pen
             _baseUrl = baseUrl;
         }
 
-        public void Execute(DeletePenCommand command)
+        public void Execute(DeletePen command)
         {
             var client = new WebClient();
             new WebClient().UploadString($"{_baseUrl}/Pen/{command.PenId}", "DELETE", "");
