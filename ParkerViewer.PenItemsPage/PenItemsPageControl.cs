@@ -33,7 +33,29 @@ namespace ParkerViewer.PenItemsPage
             _tableListBox.ItemUpdated += ItemUpdated;
             _tableListBox.Show();
             _tableListBox.Dock = DockStyle.Fill;
+            _tableListBox.CreateNew += CreateNew;
+            _tableListBox.DeleteItem += DeleteItem;
             splitContainer1.Panel2.Controls.Add(_tableListBox);
+        }
+
+        private void CreateNew()
+        {
+            InsertPenItem(new PenItemDto()
+            {
+                Id = 1,
+                Name = "Новая ручка",
+                Broken = false,
+                Engraving = "",
+                ModelId = 1,
+                Stock = 1
+            });
+            UpdateElement();
+        }
+
+        private void DeleteItem(TlbItem obj)
+        {
+            DeletePenItem(int.Parse(obj.Name));
+            UpdateElement();
         }
 
         private void ItemUpdated(TlbItem obj)

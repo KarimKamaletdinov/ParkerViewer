@@ -24,6 +24,34 @@ namespace ParkerViewer.PensPage
         public PensPageControl()
         {
             InitializeComponent();
+
+            tableListBox1.CreateNew += CreateNew;
+
+            tableListBox1.DeleteItem += DeleteItem;
+        }
+
+        private void DeleteItem(TlbItem obj)
+        {
+            DeletePen(int.Parse(obj.Name));
+            UpdateElement();
+        }
+
+        private void CreateNew()
+        {
+            InsertPen(new PenDto()
+            {
+                Collection = "",
+                DetailColor = "золотой",
+                Engraving = false,
+                ForMan = false,
+                ForWoman = false,
+                GoldPen = false,
+                Id = 1,
+                Name = "",
+                Price = 0,
+                WritingType = "шариковый"
+            });
+            UpdateElement();
         }
 
         public void UpdateElement()
