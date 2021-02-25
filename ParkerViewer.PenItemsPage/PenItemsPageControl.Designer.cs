@@ -1,7 +1,7 @@
 ﻿
 namespace ParkerViewer.PenItemsPage
 {
-    partial class PensPageControl
+    partial class PenItemsPageControl
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -36,6 +36,7 @@ namespace ParkerViewer.PenItemsPage
             // 
             // splitContainer1
             // 
+            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
@@ -43,17 +44,17 @@ namespace ParkerViewer.PenItemsPage
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
+            this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.Control;
             this.splitContainer1.Size = new System.Drawing.Size(723, 590);
-            this.splitContainer1.SplitterDistance = 134;
-            this.splitContainer1.TabIndex = 0;
+            this.splitContainer1.SplitterDistance = 125;
+            this.splitContainer1.TabIndex = 2;
             // 
-            // PensPageControl
+            // PenItemsPageControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
-            this.Name = "PensPageControl";
+            this.Name = "PenItemsPageControl";
             this.Size = new System.Drawing.Size(723, 590);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);

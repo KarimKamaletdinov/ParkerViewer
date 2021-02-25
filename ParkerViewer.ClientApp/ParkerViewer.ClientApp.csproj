@@ -92,6 +92,10 @@
       <Project>{21e006f4-8856-4a6a-b6cf-5fc1bc7c78e8}</Project>
       <Name>ParkerViewer.Gui</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ParkerViewer.PenItemsPage\ParkerViewer.PenItemsPage.csproj">
+      <Project>{db2f428d-cfcd-4fca-92ca-6e85732c177f}</Project>
+      <Name>ParkerViewer.PenItemsPage</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ParkerViewer.PensPage\ParkerViewer.PensPage.csproj">
       <Project>{6e8b1e9f-177b-471d-9c61-9dacd40cab99}</Project>
       <Name>ParkerViewer.PensPage</Name>

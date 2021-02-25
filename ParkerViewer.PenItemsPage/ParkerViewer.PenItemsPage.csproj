@@ -55,16 +55,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="PensPageControl.cs">
+    <Compile Include="PenItemsPageControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PensPageControl.Designer.cs">
-      <DependentUpon>PensPageControl.cs</DependentUpon>
+    <Compile Include="PenItemsPageControl.Designer.cs">
+      <DependentUpon>PenItemsPageControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="PensPageControl.resx">
-      <DependentUpon>PensPageControl.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PenItemsPageControl.resx">
+      <DependentUpon>PenItemsPageControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,6 +93,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ParkerViewer.Abstractions\ParkerViewer.Abstractions.csproj">
+      <Project>{851ee3d3-54b6-423f-ba71-3cb7bc6e21aa}</Project>
+      <Name>ParkerViewer.Abstractions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ParkerViewer.Gui\ParkerViewer.Gui.csproj">
       <Project>{21e006f4-8856-4a6a-b6cf-5fc1bc7c78e8}</Project>
       <Name>ParkerViewer.Gui</Name>
@@ -97,6 +104,10 @@
     <ProjectReference Include="..\ParkerViewer.PensPage\ParkerViewer.PensPage.csproj">
       <Project>{6e8b1e9f-177b-471d-9c61-9dacd40cab99}</Project>
       <Name>ParkerViewer.PensPage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ParkerViewer.WebClients\ParkerViewer.WebClients.csproj">
+      <Project>{5221d1be-1681-4c5c-82a1-d73c71d069a5}</Project>
+      <Name>ParkerViewer.WebClients</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
