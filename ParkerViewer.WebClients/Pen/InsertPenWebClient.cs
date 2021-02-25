@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Text;
 using Newtonsoft.Json;
 using ParkerViewer.Abstractions;
 using ParkerViewer.Abstractions.Commands;
@@ -20,7 +21,7 @@ namespace ParkerViewer.WebClients.Pen
         {
             var client = new WebClient();
             client.Headers.Add("content-type", "application/json");
-            
+            client.Encoding = Encoding.UTF8;
             client.UploadString($"{_baseUrl}/Pen", "POST",
                JsonConvert.SerializeObject(command.Pen));
         }
