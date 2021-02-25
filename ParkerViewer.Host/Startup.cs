@@ -15,6 +15,7 @@ using ParkerViewer.Abstractions.Commands;
 using ParkerViewer.Abstractions.Dtos;
 using ParkerViewer.Abstractions.Queries;
 using ParkerViewer.Handlers.Pen;
+using ParkerViewer.Handlers.PenItem;
 using ParkerViewer.Repositories;
 
 namespace ParkerViewer.Host
@@ -32,11 +33,20 @@ namespace ParkerViewer.Host
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
             services.AddScoped<SqlPenRepository>();
+
             services.AddScoped<IQueryHandler<GetPens, PenDto[]>, GetPensHandler>();
             services.AddScoped<ICommandHandler<InsertPen>, InsertPenHandler>();
             services.AddScoped<ICommandHandler<UpdatePen>, UpdatePenHandler>();
             services.AddScoped<ICommandHandler<DeletePen>, DeletePenHandler>();
+
+            services.AddScoped<SqlPenItemRepository>();
+
+            services.AddScoped<IQueryHandler<GetPenItems, PenItemDto[]>, GetPenItemsHandler>();
+            services.AddScoped<ICommandHandler<InsertPenItem>, InsertPenItemHandler>();
+            services.AddScoped<ICommandHandler<UpdatePenItem>, UpdatePenItemHandler>();
+            services.AddScoped<ICommandHandler<DeletePenItem>, DeletePenItemHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
