@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presenters\PenItemPresenter.cs" />
+    <Compile Include="Views\IPenItemView.cs" />
     <Compile Include="WinForms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
