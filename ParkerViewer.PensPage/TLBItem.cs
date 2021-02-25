@@ -24,7 +24,7 @@ namespace ParkerViewer.PensPage
             new List<(string, string, TlbItemValue, string[])>();
 
         private bool _collapsed = false;
-
+        
         public TlbItem()
         {
             InitializeComponent();
