@@ -29,7 +29,26 @@ namespace ParkerViewer.PensPage
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.создатьНовыйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.создатьНовыйToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(184, 28);
+            // 
+            // создатьНовыйToolStripMenuItem
+            // 
+            this.создатьНовыйToolStripMenuItem.Name = "создатьНовыйToolStripMenuItem";
+            this.создатьНовыйToolStripMenuItem.Size = new System.Drawing.Size(183, 24);
+            this.создатьНовыйToolStripMenuItem.Text = "Создать новый";
+            this.создатьНовыйToolStripMenuItem.Click += new System.EventHandler(this.создатьНовыйToolStripMenuItem_Click);
             // 
             // TableListBox
             // 
@@ -37,13 +56,18 @@ namespace ParkerViewer.PensPage
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Name = "TableListBox";
             this.Size = new System.Drawing.Size(298, 170);
             this.Load += new System.EventHandler(this.TableListBox_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem создатьНовыйToolStripMenuItem;
     }
 }

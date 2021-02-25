@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{21E006F4-8856-4A6A-B6CF-5FC1BC7C78E8}</ProjectGuid>
+    <ProjectGuid>{DB2F428D-CFCD-4FCA-92CA-6E85732C177F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ParkerViewer.Gui</RootNamespace>
-    <AssemblyName>ParkerViewer.Gui</AssemblyName>
+    <RootNamespace>ParkerViewer.PenItemsPage</RootNamespace>
+    <AssemblyName>ParkerViewer.PenItemsPage</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,18 +49,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Presenters\PenItemPresenter.cs" />
-    <Compile Include="Views\IPenItemView.cs" />
-    <Compile Include="WinForms\MainForm.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WinForms\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\IPenView.cs" />
-    <Compile Include="Presenters\PenPresenter.cs" />
+    <Compile Include="PenItemsPageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PenItemsPageControl.Designer.cs">
+      <DependentUpon>PenItemsPageControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PenItemsPageControl.resx">
+      <DependentUpon>PenItemsPageControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -67,9 +78,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="WinForms\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -88,15 +97,18 @@
       <Project>{851ee3d3-54b6-423f-ba71-3cb7bc6e21aa}</Project>
       <Name>ParkerViewer.Abstractions</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ParkerViewer.Gui\ParkerViewer.Gui.csproj">
+      <Project>{21e006f4-8856-4a6a-b6cf-5fc1bc7c78e8}</Project>
+      <Name>ParkerViewer.Gui</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ParkerViewer.PensPage\ParkerViewer.PensPage.csproj">
+      <Project>{6e8b1e9f-177b-471d-9c61-9dacd40cab99}</Project>
+      <Name>ParkerViewer.PensPage</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ParkerViewer.WebClients\ParkerViewer.WebClients.csproj">
       <Project>{5221d1be-1681-4c5c-82a1-d73c71d069a5}</Project>
       <Name>ParkerViewer.WebClients</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ParkerViewer\ParkerViewer.csproj">
-      <Project>{7c39914a-a436-4795-97f1-c18c94122a76}</Project>
-      <Name>ParkerViewer</Name>
-    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
