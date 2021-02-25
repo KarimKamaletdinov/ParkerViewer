@@ -4,29 +4,24 @@ using ParkerViewer.Repositories;
 
 namespace ParkerViewer.Handlers.PenItem
 {
-    public class InsertPenItemHandler : ICommandHandler<InsertPen>
+    public class InsertPenItemHandler : ICommandHandler<InsertPenItem>
     {
-        private readonly SqlPenRepository _repository;
+        private readonly SqlPenItemRepository _repository;
 
-        public InsertPenItemHandler(SqlPenRepository repository)
+        public InsertPenItemHandler(SqlPenItemRepository repository)
         {
             _repository = repository;
         }
 
-        public void Execute(InsertPen command)
+        public void Execute(InsertPenItem command)
         {
-            _repository.Insert(new Models.Pen()
+            _repository.Insert(new Models.PenItem()
             {
-                Id = command.Pen.Id,
-                Collection = command.Pen.Collection,
-                DetailColor = command.Pen.DetailColor,
-                Engraving = command.Pen.Engraving,
-                ForMan = command.Pen.ForMan,
-                ForWoman = command.Pen.ForWoman,
-                GoldPen = command.Pen.GoldPen,
-                Name = command.Pen.Name,
-                Price = command.Pen.Price,
-                WritingType = command.Pen.WritingType
+                Id = command.PenItem.Id,
+                Engraving = command.PenItem.Engraving,
+                Name = command.PenItem.Name,
+                ModelId = command.PenItem.ModelId,
+                Broken = command.PenItem.Broken
             });
         }
     }

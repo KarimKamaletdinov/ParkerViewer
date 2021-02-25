@@ -37,45 +37,35 @@ namespace ParkerViewer.Repositories
 
         public void Update(PenItem item)
         {
-            new SqlConnection(_connectionString).Update(new SqlPenDto()
+            new SqlConnection(_connectionString).Update(new SqlPenItemDto()
             {
-                Id = pen.Id,
-                Collection = pen.Collection,
-                DetailColor = pen.DetailColor,
-                Engraving = pen.Engraving,
-                ForMan = pen.ForMan,
-                ForWoman = pen.ForWoman,
-                GoldPen = pen.GoldPen,
-                Name = pen.Name,
-                Price = pen.Price,
-                WritingType = pen.WritingType
+                Id = item.Id,
+                Engraving = item.Engraving,
+                Name = item.Name,
+                ModelId = item.ModelId,
+                Broken = item.Broken
             });
         }
 
         public void Delete(int id)
         {
-            new SqlConnection(_connectionString).Delete(new SqlPenDto() {Id = id});
+            new SqlConnection(_connectionString).Delete(new SqlPenItemDto() {Id = id});
         }
 
         public PenItem[] GetAll()
         {
-            var a = new SqlConnection(_connectionString).Query<SqlPenDto>("SELECT * FROM Pens");
+            var a = new SqlConnection(_connectionString).Query<SqlPenItemDto>("SELECT * FROM Pens");
 
-            var result = new List<Pen>();
+            var result = new List<PenItem>();
 
             foreach (var pen in a)
             {
-                result.Add(new Pen(){      
-                        Id = pen.Id,
-                        Collection = pen.Collection,
-                        DetailColor = pen.DetailColor,
-                        Engraving = pen.Engraving,
-                        ForMan = pen.ForMan,
-                        ForWoman = pen.ForWoman,
-                        GoldPen = pen.GoldPen,
-                        Name = pen.Name,
-                        Price = pen.Price,
-                        WritingType = pen.WritingType
+                result.Add(new PenItem(){
+                    Id = pen.Id,
+                    Engraving = pen.Engraving,
+                    Name = pen.Name,
+                    ModelId = pen.ModelId,
+                    Broken = pen.Broken
                 });
             }
 

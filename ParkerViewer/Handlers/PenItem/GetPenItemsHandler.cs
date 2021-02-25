@@ -7,34 +7,29 @@ using ParkerViewer.Repositories;
 
 namespace ParkerViewer.Handlers.PenItem
 {
-    public class GetPenItemsHandler : IQueryHandler<GetPens, PenDto[]>
+    public class GetPenItemsHandler : IQueryHandler<GetPenItems, PenItemDto[]>
     {
-        private readonly SqlPenRepository _repository;
+        private readonly SqlPenItemRepository _repository;
 
-        public GetPenItemsHandler(SqlPenRepository repository)
+        public GetPenItemsHandler(SqlPenItemRepository repository)
         {
             _repository = repository;
         }
 
-        public PenDto[] Execute(GetPens query)
+        public PenItemDto[] Execute(GetPenItems query)
         {
-            var result = new List<PenDto>();
+            var result = new List<PenItemDto>();
             var pens = _repository.GetAll();
 
             foreach (var pen in pens)
             {
-               result.Add(new PenDto()
+               result.Add(new PenItemDto()
                {
                    Id = pen.Id,
-                   Collection = pen.Collection,
-                   DetailColor = pen.DetailColor,
                    Engraving = pen.Engraving,
-                   ForMan = pen.ForMan,
-                   ForWoman = pen.ForWoman,
-                   GoldPen = pen.GoldPen,
                    Name = pen.Name,
-                   Price = pen.Price,
-                   WritingType = pen.WritingType
+                   ModelId = pen.ModelId,
+                   Broken = pen.Broken
                });
             }
 
