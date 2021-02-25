@@ -21,7 +21,8 @@ namespace ParkerViewer.Handlers.PenItem
                 Engraving = command.PenItem.Engraving,
                 Name = command.PenItem.Name,
                 ModelId = command.PenItem.ModelId,
-                Broken = command.PenItem.Broken
+                Broken = command.PenItem.Broken,
+                Stock = command.PenItem.Stock
             });
         }
     }

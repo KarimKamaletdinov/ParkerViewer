@@ -31,7 +31,8 @@ namespace ParkerViewer.Repositories
                 Engraving = item.Engraving,
                 Name = item.Name,
                 ModelId = item.ModelId,
-                Broken = item.Broken
+                Broken = item.Broken,
+                Stock = item.Stock
             });
         }
 
@@ -43,7 +44,8 @@ namespace ParkerViewer.Repositories
                 Engraving = item.Engraving,
                 Name = item.Name,
                 ModelId = item.ModelId,
-                Broken = item.Broken
+                Broken = item.Broken,
+                Stock = item.Stock
             });
         }
 
@@ -54,7 +56,7 @@ namespace ParkerViewer.Repositories
 
         public PenItem[] GetAll()
         {
-            var a = new SqlConnection(_connectionString).Query<SqlPenItemDto>("SELECT * FROM Pens");
+            var a = new SqlConnection(_connectionString).Query<SqlPenItemDto>("SELECT * FROM PenItems");
 
             var result = new List<PenItem>();
 
@@ -65,7 +67,8 @@ namespace ParkerViewer.Repositories
                     Engraving = pen.Engraving,
                     Name = pen.Name,
                     ModelId = pen.ModelId,
-                    Broken = pen.Broken
+                    Broken = pen.Broken,
+                    Stock = pen.Stock
                 });
             }
 
@@ -80,6 +83,7 @@ namespace ParkerViewer.Repositories
             public string Name { get; set; }
             public int ModelId { get; set; }
             public string Engraving { get; set; }
+            public int Stock { get; set; }
             public bool Broken { get; set; }
         }
     }

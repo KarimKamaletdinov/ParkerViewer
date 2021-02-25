@@ -9,7 +9,8 @@ namespace ParkerViewer.Models
         private string _name;
         private string _engraving;
         private bool _broken;
-        
+        private int _stock;
+
         public int Id
         {
             get => _id;
@@ -22,6 +23,12 @@ namespace ParkerViewer.Models
             get => _modelId;
             set => _modelId = value < 0 ? throw new Exception("ModelId can not" +
                 " be negative") : value;
+        }
+
+        public int Stock
+        {
+            get => _stock;
+            set => _stock = value;
         }
 
         public string Name
