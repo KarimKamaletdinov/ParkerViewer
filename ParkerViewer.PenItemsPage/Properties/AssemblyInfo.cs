@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
-[assembly: AssemblyTitle("PenItemsPage")]
+[assembly: AssemblyTitle("ParkerViewer.PenItemsPage")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PenItemsPage")]
+[assembly: AssemblyProduct("ParkerViewer.PenItemsPage")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("72c1bc37-2bd8-40bc-be2b-e5f3b9e3fee2")]
+[assembly: Guid("db2f428d-cfcd-4fca-92ca-6e85732c177f")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //

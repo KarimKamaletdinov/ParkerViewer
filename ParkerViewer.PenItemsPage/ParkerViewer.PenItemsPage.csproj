@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{72C1BC37-2BD8-40BC-BE2B-E5F3B9E3FEE2}</ProjectGuid>
+    <ProjectGuid>{DB2F428D-CFCD-4FCA-92CA-6E85732C177F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>PenItemsPage</RootNamespace>
-    <AssemblyName>PenItemsPage</AssemblyName>
+    <RootNamespace>ParkerViewer.PenItemsPage</RootNamespace>
+    <AssemblyName>ParkerViewer.PenItemsPage</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,8 +55,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="PensPageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PensPageControl.Designer.cs">
+      <DependentUpon>PensPageControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PensPageControl.resx">
+      <DependentUpon>PensPageControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +75,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -77,6 +90,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ParkerViewer.Gui\ParkerViewer.Gui.csproj">
+      <Project>{21e006f4-8856-4a6a-b6cf-5fc1bc7c78e8}</Project>
+      <Name>ParkerViewer.Gui</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ParkerViewer.PensPage\ParkerViewer.PensPage.csproj">
       <Project>{6e8b1e9f-177b-471d-9c61-9dacd40cab99}</Project>
       <Name>ParkerViewer.PensPage</Name>

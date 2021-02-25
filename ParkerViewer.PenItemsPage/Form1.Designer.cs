@@ -1,5 +1,5 @@
 ﻿
-namespace PenItemsPage
+namespace ParkerViewer.PenItemsPage
 {
     partial class Form1
     {
