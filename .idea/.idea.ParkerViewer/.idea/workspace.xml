@@ -18,9 +18,10 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/ParkerViewer.PenItemsPage/Form1.cs" />
-      <option value="$PROJECT_DIR$/ParkerViewer.PenItemsPage/PenItemsPageControl.cs" />
       <option value="$PROJECT_DIR$/ParkerViewer.PensPage/Filter.cs" />
       <option value="$PROJECT_DIR$/ParkerViewer.PensPage/FilterView.cs" />
+      <option value="$PROJECT_DIR$/ParkerViewer.ClientApp/MainForm.cs" />
+      <option value="$PROJECT_DIR$/ParkerViewer.PenItemsPage/PenItemsPageControl.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1p1IjQIpoLjsHLCEiAxrnp2LqBk" />
@@ -32,6 +33,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="InlayHintsGeneralOptionsPageId" />
   </component>
   <component name="RunManager" selected=".NET Project.ParkerViewer.ClientApp">
     <configuration name="ParkerViewer.ClientApp" type="DotNetProject" factoryName=".NET Project">
@@ -163,7 +165,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1614344309262</updated>
-      <workItem from="1614344310529" duration="1134000" />
+      <workItem from="1614344310529" duration="1769000" />
+      <workItem from="1614346129927" duration="1475000" />
     </task>
     <servers />
   </component>

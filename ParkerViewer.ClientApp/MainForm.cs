@@ -33,6 +33,7 @@ namespace ParkerViewer.ClientApp
             control.UpdateElement();
 
             var control2 = new PenItemsPageControl();
+            control2.Models = control.Pens.Select(x => (x.Name, x.Id)).ToArray();
             var p2 = new PenItemPresenter(new InsertPenItemWebClient(), new UpdatePenItemWebClient(),
                 new DeletePenItemWebClient(), new GetPenItemsWebClient());
             p2.Register(control2);
