@@ -106,9 +106,25 @@ namespace ParkerViewer.PenItemsPage
             throw new Exception($"Поле \"{name}\" не найдено!");
         }
 
-        private void tableListBox1_Load(object sender, EventArgs e)
+        private void создатьФильтрToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            var value = new FilterView();
+            value.Fields.Add(("Название", TlbItemValue.String, null));
+            value.Fields.Add(("Модель", TlbItemValue.Int, null));
+            value.Fields.Add(("Склад", TlbItemValue.Int, null));
+            value.Fields.Add(("Гравировка", TlbItemValue.String, null));
+            value.Fields.Add(("Брак", TlbItemValue.Bool, null));
+            value.UpdateFields();
+            value.ContextMenuStrip = contextMenuStrip1;
+            flowLayoutPanel1.Controls.Add(value);
+            _tableListBox.Filters.Add(value.Filter);
+            value.FilterChanged += () => _tableListBox.UpdateItems();
+            value.Delete += () =>
+            {
+                flowLayoutPanel1.Controls.Remove(value);
+                _tableListBox.Filters.Remove(value.Filter);
+                _tableListBox.UpdateItems();
+            };
         }
     }
 }

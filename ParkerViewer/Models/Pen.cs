@@ -54,9 +54,9 @@ namespace ParkerViewer.Models
         public string WritingType
         {
             get => _writingType;
-            set => _writingType = value != "шариковый" && value != "роллер"
-                || value == "перьевой" ? throw new Exception("WritingType can be only " +
-                    "\"шариковый\", \"роллер\" or \"перьевой\"") : value;
+            set => _writingType = value != "шариковый" && value != "роллер" && value != "перьевой"
+                        ? throw new Exception("WritingType can be only \"шариковый\", \"роллер\" or " +
+                            "\"перьевой\"") : value;
         }
 
         public bool GoldPen

@@ -121,5 +121,36 @@ namespace ParkerViewer.PensPage
 
             throw new Exception($"Поле \"{name}\" не найдено!");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var value = new FilterView();
+            value.Fields.Add(("Название",TlbItemValue.String, null));
+            value.Fields.Add(("Цена", TlbItemValue.Int, null));
+            value.Fields.Add(("Цвет деталей", TlbItemValue.Enum, new[]{"золотой",
+                "серебряный"}));
+            value.Fields.Add(("Тип пишущего узла",TlbItemValue.Enum, new[]
+            {
+                "шариковый",
+                "роллер",
+                "перьевой"
+            }));
+            value.Fields.Add(("Коллекция", TlbItemValue.String, null));
+            value.Fields.Add(("Гравировка", TlbItemValue.Bool, null));
+            value.Fields.Add(("Золотое перо", TlbItemValue.Bool, null));
+            value.Fields.Add(("Для мужчин", TlbItemValue.Bool, null));
+            value.Fields.Add(("Для женщин", TlbItemValue.Bool, null));
+            value.UpdateFields();
+            value.ContextMenuStrip = contextMenuStrip1;
+            flowLayoutPanel1.Controls.Add(value);
+            tableListBox1.Filters.Add(value.Filter);
+            value.FilterChanged += () => tableListBox1.UpdateItems();
+            value.Delete += () =>
+            {
+                flowLayoutPanel1.Controls.Remove(value);
+                tableListBox1.Filters.Remove(value.Filter);
+                tableListBox1.UpdateItems();
+            };
+        }
     }
 }
