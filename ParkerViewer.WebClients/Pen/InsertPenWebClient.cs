@@ -4,6 +4,7 @@ using System.Text;
 using Newtonsoft.Json;
 using ParkerViewer.Abstractions;
 using ParkerViewer.Abstractions.Commands;
+using ParkerViewer.Abstractions.Commands.Pen;
 using RestSharp;
 
 namespace ParkerViewer.WebClients.Pen

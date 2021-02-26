@@ -2,6 +2,7 @@
 using System.Linq;
 using ParkerViewer.Abstractions;
 using ParkerViewer.Abstractions.Commands;
+using ParkerViewer.Abstractions.Commands.Pen;
 using ParkerViewer.Abstractions.Dtos;
 using ParkerViewer.Abstractions.Queries;
 using ParkerViewer.Gui.Views;
