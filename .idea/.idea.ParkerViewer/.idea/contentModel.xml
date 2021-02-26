@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Karim\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Karim\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_ParkerViewer.1139815401.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Karim\source\repos\ParkerViewer" t="IncludeFlat">
+      <e p=".app" t="Include" />
+      <e p="Modules" t="Include" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="ParkerViewer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Handlers" t="Include">
+          <e p="Pen" t="Include">
+            <e p="DeletePenHandler.cs" t="Include" />
+            <e p="GetPensHandler.cs" t="Include" />
+            <e p="InsertPenHandler.cs" t="Include" />
+            <e p="UpdatePenHandler.cs" t="Include" />
+          </e>
+          <e p="PenItem" t="Include">
+            <e p="DeletePenItemHandler.cs" t="Include" />
+            <e p="GetPenItemsHandler.cs" t="Include" />
+            <e p="InsertPenItemHandler.cs" t="Include" />
+            <e p="UpdatePenItemHandler.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Models" t="Include">
+          <e p="Pen.cs" t="Include" />
+          <e p="PenItem.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="ParkerViewer.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="ParkerViewer.csproj" t="IncludeRecursive" />
+        <e p="Repositories" t="Include">
+          <e p="IPenItemRepository.cs" t="Include" />
+          <e p="IPenRepository.cs" t="Include" />
+          <e p="SqlPenItemRepository.cs" t="Include" />
+          <e p="SqlPenRepository.cs" t="Include" />
+        </e>
+      </e>
+      <e p="ParkerViewer.Abstractions" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Command.cs" t="Include" />
+        <e p="Commands" t="Include">
+          <e p="DeletePen.cs" t="Include" />
+          <e p="DeletePenItem.cs" t="Include" />
+          <e p="InsertPen.cs" t="Include" />
+          <e p="InsertPenItem.cs" t="Include" />
+          <e p="UpdatePen.cs" t="Include" />
+          <e p="UpdatePenItem.cs" t="Include" />
+        </e>
+        <e p="Dtos" t="Include">
+          <e p="PenDto.cs" t="Include" />
+          <e p="PenItemDto.cs" t="Include" />
+        </e>
+        <e p="ICommandHandler.cs" t="Include" />
+        <e p="IQueryHandler.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="ParkerViewer.Abstractions.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="ParkerViewer.Abstractions.csproj" t="IncludeRecursive" />
+        <e p="Queries" t="Include">
+          <e p="GetPenItems.cs" t="Include" />
+          <e p="GetPens.cs" t="Include" />
+        </e>
+        <e p="Query.cs" t="Include" />
+      </e>
+      <e p="ParkerViewer.ClientApp" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="MainForm.cs" t="Include" />
+        <e p="MainForm.Designer.cs" t="Include" />
+        <e p="MainForm.resx" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="ParkerViewer.ClientApp.csproj" t="IncludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+      </e>
+      <e p="ParkerViewer.Gui" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="ParkerViewer.Gui.csproj" t="IncludeRecursive" />
+        <e p="Presenters" t="Include">
+          <e p="PenItemPresenter.cs" t="Include" />
+          <e p="PenPresenter.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="Views" t="Include">
+          <e p="IPenItemView.cs" t="Include" />
+          <e p="IPenView.cs" t="Include" />
+        </e>
+        <e p="WinForms" t="Include">
+          <e p="MainForm.cs" t="Include" />
+          <e p="MainForm.Designer.cs" t="Include" />
+          <e p="MainForm.resx" t="Include" />
+        </e>
+      </e>
+      <e p="ParkerViewer.Host" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="PenController.cs" t="Include" />
+          <e p="PenItemController.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="ParkerViewer.Host.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="ParkerViewer.Host.csproj" t="IncludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+      </e>
+      <e p="ParkerViewer.PenItemsPage" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Form1.cs" t="Include" />
+        <e p="Form1.Designer.cs" t="Include" />
+        <e p="Form1.resx" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="ParkerViewer.PenItemsPage.csproj" t="IncludeRecursive" />
+        <e p="PenItemsPageControl.cs" t="Include" />
+        <e p="PenItemsPageControl.Designer.cs" t="Include" />
+        <e p="PenItemsPageControl.resx" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+      </e>
+      <e p="ParkerViewer.PensPage" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Filter.cs" t="Include" />
+        <e p="FilterView.cs" t="Include" />
+        <e p="FilterView.Designer.cs" t="Include" />
+        <e p="FilterView.resx" t="Include" />
+        <e p="Form1.cs" t="Include" />
+        <e p="Form1.Designer.cs" t="Include" />
+        <e p="Form1.resx" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="ParkerViewer.PensPage.csproj" t="IncludeRecursive" />
+        <e p="PensPageControl.cs" t="Include" />
+        <e p="PensPageControl.Designer.cs" t="Include" />
+        <e p="PensPageControl.resx" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="TableListBox.cs" t="Include" />
+        <e p="TableListBox.Designer.cs" t="Include" />
+        <e p="TableListBox.resx" t="Include" />
+        <e p="TLBItem.cs" t="Include" />
+        <e p="TLBItem.Designer.cs" t="Include" />
+        <e p="TLBItem.resx" t="Include" />
+        <e p="TlbItemValue.cs" t="Include" />
+      </e>
+      <e p="ParkerViewer.sln" t="IncludeFlat" />
+      <e p="ParkerViewer.TestApp" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="ParkerViewer.TestApp.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="ParkerViewer.TestApp.csproj" t="IncludeRecursive" />
+        <e p="Program.cs" t="Include" />
+      </e>
+      <e p="ParkerViewer.WebClients" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="ParkerViewer.WebClients.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="ParkerViewer.WebClients.csproj" t="IncludeRecursive" />
+        <e p="Pen" t="Include">
+          <e p="DeletePenWebClient.cs" t="Include" />
+          <e p="GetPensWebClient.cs" t="Include" />
+          <e p="InsertPenWebClient.cs" t="Include" />
+          <e p="UpdatePenWebClient.cs" t="Include" />
+        </e>
+        <e p="PenItem" t="Include">
+          <e p="DeletePenItemWebClient.cs" t="Include" />
+          <e p="GetPenItemsWebClient.cs" t="Include" />
+          <e p="InsertPenItemWebClient.cs" t="Include" />
+          <e p="UpdatePenItemWebClient.cs" t="Include" />
+        </e>
+      </e>
+      <e p="README.md" t="Include" />
+      <e p="Solution Items" t="Include" />
+    </e>
+  </component>
+</project>

@@ -56,8 +56,8 @@ namespace ParkerViewer.PensPage
                         comboBox2.Items.Add("=");
                         comboBox2.Items.Add(">");
                         comboBox2.Items.Add("<");
-
-                        comboBox3.FormatString = "N0";
+                        comboBox2.Text = "=";
+                        comboBox3.Text = "0";
                         break;
                     case TlbItemValue.Bool:
                         comboBox2.Items.Add("=");
@@ -81,10 +81,17 @@ namespace ParkerViewer.PensPage
 
         private void comboBox2_TextChanged(object sender, EventArgs e)
         {
-            Filter.FieldName = comboBox1.Text;
-            Filter.Sign = comboBox2.Text[0];
-            Filter.FieldValue = comboBox3.Text;
-            FilterChanged();
+            try
+            {
+                Filter.FieldName = comboBox1.Text;
+                Filter.Sign = comboBox2.Text[0];
+                Filter.FieldValue = comboBox3.Text;
+                FilterChanged();
+            }
+            catch
+            {
+                // ignored
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

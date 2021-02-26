@@ -16,9 +16,9 @@
             switch (Sign)
             {
                 case '>':
-                    return int.Parse(FieldValue) > int.Parse(fieldValue);
-                case '<':
                     return int.Parse(FieldValue) < int.Parse(fieldValue);
+                case '<':
+                    return int.Parse(FieldValue) > int.Parse(fieldValue);
                 case '=':
                     return FieldValue == fieldValue;
                 case '?':
