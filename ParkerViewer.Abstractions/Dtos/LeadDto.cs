@@ -10,6 +10,8 @@ namespace ParkerViewer.Abstractions.Dtos
 
         public string CostumerAddress { get; set; }
 
+        public string Status { get; set; }
+
         public int[] Pens { get; set; }
 
         public DateTime CreatingDate { get; set; }
