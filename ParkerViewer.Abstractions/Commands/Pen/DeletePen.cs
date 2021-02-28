@@ -1,4 +1,4 @@
-﻿namespace ParkerViewer.Abstractions.Commands
+﻿namespace ParkerViewer.Abstractions.Commands.Pen
 {
     public class DeletePen : Command
     {
