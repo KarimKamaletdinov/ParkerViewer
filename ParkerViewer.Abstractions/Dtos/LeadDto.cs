@@ -10,7 +10,11 @@ namespace ParkerViewer.Abstractions.Dtos
 
         public string CostumerAddress { get; set; }
 
-        public string Status { get; set; }
+        public bool Agreed { get; set; }
+
+        public bool Payed { get; set; }
+
+        public bool Deleivered { get; set; }
 
         public int[] Pens { get; set; }
 
