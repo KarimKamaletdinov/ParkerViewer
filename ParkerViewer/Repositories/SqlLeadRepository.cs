@@ -1,4 +1,5 @@
 ﻿using System;
+using Dapper.Contrib.Extensions;
 using ParkerViewer.Models;
 
 namespace ParkerViewer.Repositories
@@ -25,6 +26,7 @@ namespace ParkerViewer.Repositories
             throw new System.NotImplementedException();
         }
 
+        [Table("Leads")]
         private class SqlLeadDto
         {
             public int Id { get; set; }
