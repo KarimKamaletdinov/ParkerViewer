@@ -117,5 +117,7 @@ namespace ParkerViewer.Models
             get => _comment;
             set => _comment = value;
         }
+
+        public int FullPrice => throw new NotImplementedException();
     }
 }
