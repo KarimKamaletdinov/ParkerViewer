@@ -24,10 +24,10 @@ namespace ParkerViewer.Repositories
         }
         public void Insert(Lead lead)
         {
-            new SqlConnection().Insert(new SqlLeadDto
+            new SqlConnection(_connectionString).Insert(new SqlLeadDto
             {
                 Id = lead.Id,
-                CustomerName = lead.CustomerName,
+                CostumerName = lead.CustomerName,
                 Region = lead.Region,
                 Sity = lead.Sity,
                 Street = lead.Street,
@@ -35,7 +35,7 @@ namespace ParkerViewer.Repositories
                 Flat = lead.Flat,
                 Agreed = lead.Agreed,
                 Payed = lead.Payed,
-                Deleivered = lead.Deleivered,
+                Delivered = lead.Deleivered,
                 Pens = string.Join(",", lead.Pens),
                 CreatingDate = lead.CreatingDate,
                 DeliveryDate = lead.DeliveryDate,
@@ -47,10 +47,10 @@ namespace ParkerViewer.Repositories
 
         public void Update(Lead lead)
         {
-            new SqlConnection().Update(new SqlLeadDto
+            new SqlConnection(_connectionString).Update(new SqlLeadDto
             {
                 Id = lead.Id,
-                CustomerName = lead.CustomerName,
+                CostumerName = lead.CustomerName,
                 Region = lead.Region,
                 Sity = lead.Sity,
                 Street = lead.Street,
@@ -58,7 +58,7 @@ namespace ParkerViewer.Repositories
                 Flat = lead.Flat,
                 Agreed = lead.Agreed,
                 Payed = lead.Payed,
-                Deleivered = lead.Deleivered,
+                Delivered = lead.Deleivered,
                 Pens = string.Join(",", lead.Pens),
                 CreatingDate = lead.CreatingDate,
                 DeliveryDate = lead.DeliveryDate,
@@ -70,17 +70,17 @@ namespace ParkerViewer.Repositories
 
         public void Delete(int id)
         {
-            new SqlConnection().Delete(new SqlLeadDto() {Id = id});
+            new SqlConnection(_connectionString).Delete(new SqlLeadDto() {Id = id});
         }
 
         public Lead[] GetAll()
         {
-            var leads = new SqlConnection().Query<SqlLeadDto>("SELECT * FROM Leads");
+            var leads = new SqlConnection(_connectionString).Query<SqlLeadDto>("SELECT * FROM Leads");
 
             var result = leads.Select(lead => new Lead()
                 {
                     Id = lead.Id,
-                    CustomerName = lead.CustomerName,
+                    CustomerName = lead.CostumerName,
                     Region = lead.Region,
                     Sity = lead.Sity,
                     Street = lead.Street,
@@ -88,7 +88,7 @@ namespace ParkerViewer.Repositories
                     Flat = lead.Flat,
                     Agreed = lead.Agreed,
                     Payed = lead.Payed,
-                    Deleivered = lead.Deleivered,
+                    Deleivered = lead.Delivered,
                     Pens = lead.Pens.Split(',').Select(int.Parse).ToArray(),
                     CreatingDate = lead.CreatingDate,
                     DeliveryDate = lead.DeliveryDate,
@@ -105,7 +105,7 @@ namespace ParkerViewer.Repositories
         {
             public int Id { get; set; }
 
-            public string CustomerName { get; set; }
+            public string CostumerName { get; set; }
 
             public string Region { get; set; }
 
@@ -121,7 +121,7 @@ namespace ParkerViewer.Repositories
 
             public bool Payed { get; set; }
 
-            public bool Deleivered { get; set; }
+            public bool Delivered { get; set; }
 
             public string Pens { get; set; }
 
