@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LeadsPageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LeadsPageControl.Designer.cs">
+      <DependentUpon>LeadsPageControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -75,6 +81,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ParkerViewer.Abstractions\ParkerViewer.Abstractions.csproj">
+      <Project>{851ee3d3-54b6-423f-ba71-3cb7bc6e21aa}</Project>
+      <Name>ParkerViewer.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ParkerViewer.Gui\ParkerViewer.Gui.csproj">
+      <Project>{21e006f4-8856-4a6a-b6cf-5fc1bc7c78e8}</Project>
+      <Name>ParkerViewer.Gui</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ParkerViewer\ParkerViewer.csproj">
+      <Project>{7c39914a-a436-4795-97f1-c18c94122a76}</Project>
+      <Name>ParkerViewer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
