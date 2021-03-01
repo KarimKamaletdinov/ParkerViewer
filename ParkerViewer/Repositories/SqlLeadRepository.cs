@@ -47,7 +47,7 @@ namespace ParkerViewer.Repositories
 
             public bool Deleivered { get; set; }
 
-            public int[] Pens { get; set; }
+            public string Pens { get; set; }
 
             public DateTime CreatingDate { get; set; }
 
