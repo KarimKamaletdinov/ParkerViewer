@@ -8,7 +8,15 @@ namespace ParkerViewer.Abstractions.Dtos
 
         public string CustomerName { get; set; }
 
-        public string CostumerAddress { get; set; }
+        public string Region { get; set; }
+
+        public string Sity { get; set; }
+
+        public string Street { get; set; }
+
+        public string House { get; set; }
+
+        public string Flat { get; set; }
 
         public bool Agreed { get; set; }
 

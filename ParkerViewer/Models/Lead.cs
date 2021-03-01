@@ -6,7 +6,6 @@ namespace ParkerViewer.Models
     {
         private int _id;
         private string _customerName;
-        private string _costumerAddress;
         private int[] _pens;
         private DateTime _creatingDate;
         private DateTime _deliveryDate;
@@ -16,6 +15,11 @@ namespace ParkerViewer.Models
         private bool _payed;
         private bool _deleivered;
         private bool _agreed;
+        private string _region;
+        private string _sity;
+        private string _street;
+        private string _house;
+        private string _flat;
 
         public int Id
         {
@@ -30,10 +34,34 @@ namespace ParkerViewer.Models
 
         }
 
-        public string CostumerAddress
+        public string Region
         {
-            get => _costumerAddress;
-            set => _costumerAddress = value ?? throw new NullReferenceException();
+            get => _region;
+            set => _region = value ?? throw new NullReferenceException();
+        }
+
+        public string Sity
+        {
+            get => _sity;
+            set => _sity = value ?? throw new NullReferenceException();
+        }
+
+        public string Street
+        {
+            get => _street;
+            set => _street = value ?? throw new NullReferenceException();
+        }
+
+        public string House
+        {
+            get => _house;
+            set => _house = value ?? throw new NullReferenceException();
+        }
+
+        public string Flat
+        {
+            get => _flat;
+            set => _flat = value ?? "";
         }
 
         public bool Agreed
