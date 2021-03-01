@@ -36,6 +36,6 @@ namespace ParkerViewer.Abstractions.Dtos
 
         public string Comment { get; set; }
 
-        public int FullPrice { get; set; }
+        public int? FullPrice { get; set; }
     }
 }
