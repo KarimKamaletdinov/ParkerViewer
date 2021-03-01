@@ -23,7 +23,6 @@ namespace ParkerViewer.WebClients.Pen
             var client = new WebClient();
             client.Encoding = Encoding.UTF8;
             var s = client.DownloadString($"{_baseUrl}/Pen");
-            Console.WriteLine(s);
             var result = JsonConvert.DeserializeObject<PenDto[]>(s);
             return result;
         }
