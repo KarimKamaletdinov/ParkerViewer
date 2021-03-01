@@ -92,6 +92,17 @@ namespace ParkerViewer.PensPage
                         box.SelectedIndexChanged += ChangeData;
                         tableLayoutPanel1.Controls.Add(box);
                     }
+
+                    else if (item.Item3 == TlbItemValue.DateTime)
+                    {
+                        var box = new DateTimePicker();
+                        box.AutoSize = false;
+                        box.Dock = DockStyle.Fill;
+                        box.Name = $"item{item.Item1}";
+                        box.Value = DateTime.Parse(item.Item2);
+                        box.ValueChanged += ChangeData;
+                        tableLayoutPanel1.Controls.Add(box);
+                    }
                 }
             }
 

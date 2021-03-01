@@ -64,7 +64,7 @@ namespace ParkerViewer.PensPage
             {
                 var item = new TlbItem();
                 item.Name = pen.Id.ToString();
-                item.Header = pen.Name;
+                item.Header = pen.Name + "//" + pen.Id;
                 item.Items.Add(("Название", pen.Name, TlbItemValue.String, null));
                 item.Items.Add(("Цена", pen.Price.ToString(), TlbItemValue.Int, null));
                 item.Items.Add(("Цвет деталей", pen.DetailColor, TlbItemValue.Enum, new []{"золотой", 

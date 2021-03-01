@@ -20,7 +20,7 @@ namespace ParkerViewer.WebClients.Lead
             var client = new WebClient();
             client.Headers.Add("content-type", "application/json");
             client.Encoding = Encoding.UTF8;
-            client.UploadString($"{_baseUrl}/Pen/{command.Lead.Id}", "PUT",
+            client.UploadString($"{_baseUrl}/Lead/{command.Lead.Id}", "PUT",
                 JsonConvert.SerializeObject(command.Lead));
         }
     }

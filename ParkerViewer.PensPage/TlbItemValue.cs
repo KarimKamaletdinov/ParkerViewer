@@ -5,6 +5,7 @@
         Int,
         String,
         Bool,
-        Enum
+        Enum,
+        DateTime
     }
 }
