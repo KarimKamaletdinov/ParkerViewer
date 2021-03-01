@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using Dapper;
 using Dapper.Contrib.Extensions;
 using ParkerViewer.Models;
 
@@ -6,24 +10,94 @@ namespace ParkerViewer.Repositories
 {
     public class SqlLeadRepository : ILeadRepository
     {
+        private readonly string _connectionString;
+        public SqlLeadRepository()
+        {
+            var b = new SqlConnectionStringBuilder
+            {
+                DataSource = "DESKTOP-5SKIINA\\SQLEXPRESS",
+                InitialCatalog = "Parker",
+                IntegratedSecurity = true
+            };
+
+            _connectionString = b.ToString();
+        }
         public void Insert(Lead lead)
         {
-            throw new System.NotImplementedException();
+            new SqlConnection().Insert(new SqlLeadDto
+            {
+                Id = lead.Id,
+                CustomerName = lead.CustomerName,
+                Region = lead.Region,
+                Sity = lead.Sity,
+                Street = lead.Street,
+                House = lead.House,
+                Flat = lead.Flat,
+                Agreed = lead.Agreed,
+                Payed = lead.Payed,
+                Deleivered = lead.Deleivered,
+                Pens = string.Join(",", lead.Pens),
+                CreatingDate = lead.CreatingDate,
+                DeliveryDate = lead.DeliveryDate,
+                DeliveryMethod = lead.DeliveryMethod,
+                PayMethod = lead.PayMethod,
+                Comment = lead.Comment
+            });
         }
 
         public void Update(Lead lead)
         {
-            throw new System.NotImplementedException();
+            new SqlConnection().Update(new SqlLeadDto
+            {
+                Id = lead.Id,
+                CustomerName = lead.CustomerName,
+                Region = lead.Region,
+                Sity = lead.Sity,
+                Street = lead.Street,
+                House = lead.House,
+                Flat = lead.Flat,
+                Agreed = lead.Agreed,
+                Payed = lead.Payed,
+                Deleivered = lead.Deleivered,
+                Pens = string.Join(",", lead.Pens),
+                CreatingDate = lead.CreatingDate,
+                DeliveryDate = lead.DeliveryDate,
+                DeliveryMethod = lead.DeliveryMethod,
+                PayMethod = lead.PayMethod,
+                Comment = lead.Comment
+            });
         }
 
         public void Delete(int id)
         {
-            throw new System.NotImplementedException();
+            new SqlConnection().Delete(new SqlLeadDto() {Id = id});
         }
 
         public Lead[] GetAll()
         {
-            throw new System.NotImplementedException();
+            var leads = new SqlConnection().Query<SqlLeadDto>("SELECT * FROM Leads");
+
+            var result = leads.Select(lead => new Lead()
+                {
+                    Id = lead.Id,
+                    CustomerName = lead.CustomerName,
+                    Region = lead.Region,
+                    Sity = lead.Sity,
+                    Street = lead.Street,
+                    House = lead.House,
+                    Flat = lead.Flat,
+                    Agreed = lead.Agreed,
+                    Payed = lead.Payed,
+                    Deleivered = lead.Deleivered,
+                    Pens = lead.Pens.Split(',').Select(int.Parse).ToArray(),
+                    CreatingDate = lead.CreatingDate,
+                    DeliveryDate = lead.DeliveryDate,
+                    DeliveryMethod = lead.DeliveryMethod,
+                    PayMethod = lead.PayMethod,
+                    Comment = lead.Comment
+                }).ToList();
+
+            return result.ToArray();
         }
 
         [Table("Leads")]
