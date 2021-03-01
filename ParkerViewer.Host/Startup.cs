@@ -12,10 +12,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using ParkerViewer.Abstractions;
 using ParkerViewer.Abstractions.Commands;
+using ParkerViewer.Abstractions.Commands.Lead;
 using ParkerViewer.Abstractions.Commands.Pen;
 using ParkerViewer.Abstractions.Commands.PenItem;
 using ParkerViewer.Abstractions.Dtos;
 using ParkerViewer.Abstractions.Queries;
+using ParkerViewer.Handlers.Lead;
 using ParkerViewer.Handlers.Pen;
 using ParkerViewer.Handlers.PenItem;
 using ParkerViewer.Repositories;
@@ -49,6 +51,13 @@ namespace ParkerViewer.Host
             services.AddScoped<ICommandHandler<InsertPenItem>, InsertPenItemHandler>();
             services.AddScoped<ICommandHandler<UpdatePenItem>, UpdatePenItemHandler>();
             services.AddScoped<ICommandHandler<DeletePenItem>, DeletePenItemHandler>();
+
+            services.AddScoped<SqlLeadRepository>();
+
+            services.AddScoped<IQueryHandler<GetLeads, LeadDto[]>, GetLeadsHandler>();
+            services.AddScoped<ICommandHandler<InsertLead>, InsertLeadHandler>();
+            services.AddScoped<ICommandHandler<UpdateLead>, UpdateLeadHandler>();
+            services.AddScoped<ICommandHandler<DeleteLead>, DeleteLeadHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
