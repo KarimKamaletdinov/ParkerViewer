@@ -1,4 +1,6 @@
-﻿namespace ParkerViewer.PensPage
+﻿using System;
+
+namespace ParkerViewer.PensPage
 {
     public class Filter
     {
@@ -11,6 +13,19 @@
             if (FieldName != fieldName)
             {
                 return false;
+            }
+
+            if (DateTime.TryParse(FieldValue, out var a) && DateTime.TryParse(fieldValue, out var b))
+            {
+                switch (Sign)
+                {
+                    case '>':
+                        return a < b;
+                    case '<':
+                        return a > b;
+                    case '=':
+                        return a == b;
+                }
             }
 
             switch (Sign)

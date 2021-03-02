@@ -18,7 +18,7 @@ namespace ParkerViewer.WebClients.Lead
         {
             var client = new WebClient();
             client.Encoding = Encoding.UTF8;
-            client.UploadString($"{_baseUrl}/Lead/{command.LeadId}", "DELETE");
+            client.UploadString($"{_baseUrl}/Lead/{command.LeadId}", "Delete", "");
         }
     }
 }

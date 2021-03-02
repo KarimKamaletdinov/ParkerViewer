@@ -74,13 +74,14 @@ namespace ParkerViewer.LeadsPage
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.создатьФильтрToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(188, 28);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 56);
             // 
             // создатьФильтрToolStripMenuItem
             // 
             this.создатьФильтрToolStripMenuItem.Name = "создатьФильтрToolStripMenuItem";
-            this.создатьФильтрToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
+            this.создатьФильтрToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.создатьФильтрToolStripMenuItem.Text = "Создать фильтр";
+            this.создатьФильтрToolStripMenuItem.Click += new System.EventHandler(this.создатьФильтрToolStripMenuItem_Click);
             // 
             // label1
             // 

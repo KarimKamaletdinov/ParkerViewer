@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ParkerViewer.Gui.Presenters;
 using ParkerViewer.Handlers.Pen;
+using ParkerViewer.LeadsPage;
 using ParkerViewer.PenItemsPage;
+using ParkerViewer.WebClients.Lead;
 using ParkerViewer.WebClients.Pen;
 using ParkerViewer.WebClients.PenItem;
 
@@ -37,9 +39,17 @@ namespace ParkerViewer.ClientApp
             var p2 = new PenItemPresenter(new InsertPenItemWebClient(), new UpdatePenItemWebClient(),
                 new DeletePenItemWebClient(), new GetPenItemsWebClient());
             p2.Register(control2);
-            control2.Parent = splitContainer1.Panel2;
+            control2.Parent = splitContainer2.Panel1;
             control2.Dock = DockStyle.Fill;
             control2.UpdateElement();
+
+            var control3 = new LeadsPageControl();
+            var p3 = new LeadPresenter(new InsertLeadWebClient(), new UpdateLeadWebClient(),
+                new DeleteLeadWebClient(), new GetLeadsWebClient());
+            p3.Register(control3);
+            control3.Parent = splitContainer2.Panel2;
+            control3.Dock = DockStyle.Fill;
+            control3.UpdateElement();
         }
     }
 }

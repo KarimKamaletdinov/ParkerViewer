@@ -161,5 +161,52 @@ namespace ParkerViewer.LeadsPage
 
             throw new Exception($"Поле \"{name}\" не найдено!");
         }
+
+        private void создатьФильтрToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var value = new FilterView();
+            value.Fields.AddRange(new (string, TlbItemValue, string[])[]
+            {
+                ("Имя покупателя", TlbItemValue.String, null),
+                ("Регион", TlbItemValue.String, null),
+                ("Город", TlbItemValue.String, null),
+                ("Улица", TlbItemValue.String, null),
+                ("Дом", TlbItemValue.String, null),
+                ("Квартира", TlbItemValue.String, null),
+                ("Способ оплаты", TlbItemValue.Enum, new[]
+                {
+                    "На сайте",
+                    "Переводом",
+                    "Картой при получении",
+                    "Наличными при получении"
+                }),
+                ("Способ доставки", TlbItemValue.Enum, new []
+                {
+                    "Из магазина",
+                    "Нашим курьером",
+                    "Из пункта выдачи СДЭК",
+                    "Курьером СДЭК"
+                }),
+                ("Дата заказа", TlbItemValue.DateTime, null),
+                ("Дата доставки", TlbItemValue.DateTime, null),
+                ("Согласовано", TlbItemValue.Bool, null),
+                ("Оплачено", TlbItemValue.Bool, null),
+                ("Доставлено", TlbItemValue.Bool, null),
+                ("Комментарий", TlbItemValue.String, null),
+                ("Id ручек", TlbItemValue.String, null),
+                ("ИТОГО", TlbItemValue.Int, null)
+            });
+            value.UpdateFields();
+            value.ContextMenuStrip = contextMenuStrip1;
+            flowLayoutPanel1.Controls.Add(value);
+            tableListBox1.Filters.Add(value.Filter);
+            value.FilterChanged += () => tableListBox1.UpdateItems();
+            value.Delete += () =>
+            {
+                flowLayoutPanel1.Controls.Remove(value);
+                tableListBox1.Filters.Remove(value.Filter);
+                tableListBox1.UpdateItems();
+            };
+        }
     }
 }

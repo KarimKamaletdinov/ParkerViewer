@@ -46,6 +46,22 @@ namespace ParkerViewer.PensPage
                 comboBox3.FormatString = "";
                 comboBox3.DropDownStyle = ComboBoxStyle.DropDown;
 
+                Control co = null;
+
+                foreach (var c in flowLayoutPanel1.Controls)
+                {
+                    if (c is DateTimePicker d)
+                    {
+                        co = d;
+                    }
+                }
+
+                if (co != null)
+                {
+                    flowLayoutPanel1.Controls.Remove(co);
+                    flowLayoutPanel1.Controls.Add(comboBox3);
+                }
+
                 switch (field.Item2)
                 {
                     case TlbItemValue.String:
@@ -73,7 +89,15 @@ namespace ParkerViewer.PensPage
 
                         comboBox3.Items.AddRange(field.Item3);
                         break;
-                    default:
+                    case TlbItemValue.DateTime:
+                        comboBox2.Items.Add("=");
+                        comboBox2.Text = "=";
+                        comboBox3.Parent = null;
+                        var value = new DateTimePicker();
+                        value.ValueChanged += comboBox2_TextChanged;
+                        flowLayoutPanel1.Controls.Add(value);
+                        flowLayoutPanel1.Controls.Remove(button1);
+                        flowLayoutPanel1.Controls.Add(button1);
                         break;
                 }
             }
@@ -85,7 +109,7 @@ namespace ParkerViewer.PensPage
             {
                 Filter.FieldName = comboBox1.Text;
                 Filter.Sign = comboBox2.Text[0];
-                Filter.FieldValue = comboBox3.Text;
+                Filter.FieldValue = ((Control)sender).Text;
                 FilterChanged();
             }
             catch
