@@ -32,10 +32,10 @@ namespace ParkerViewer.PensPage
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.tableListBox1 = new ParkerViewer.PensPage.TableListBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.создатьФильтрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tableListBox1 = new ParkerViewer.PensPage.TableListBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -74,25 +74,6 @@ namespace ParkerViewer.PensPage
             this.flowLayoutPanel1.Size = new System.Drawing.Size(672, 144);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // tableListBox1
-            // 
-            this.tableListBox1.AutoScroll = true;
-            this.tableListBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tableListBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableListBox1.Location = new System.Drawing.Point(0, 0);
-            this.tableListBox1.Name = "tableListBox1";
-            this.tableListBox1.Size = new System.Drawing.Size(672, 535);
-            this.tableListBox1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Фильтры";
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -107,6 +88,25 @@ namespace ParkerViewer.PensPage
             this.создатьФильтрToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.создатьФильтрToolStripMenuItem.Text = "Создать фильтр";
             this.создатьФильтрToolStripMenuItem.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Фильтры";
+            // 
+            // tableListBox1
+            // 
+            this.tableListBox1.AutoScroll = true;
+            this.tableListBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tableListBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableListBox1.Location = new System.Drawing.Point(0, 0);
+            this.tableListBox1.Name = "tableListBox1";
+            this.tableListBox1.Size = new System.Drawing.Size(672, 535);
+            this.tableListBox1.TabIndex = 0;
             // 
             // PensPageControl
             // 

@@ -31,7 +31,7 @@ namespace ParkerViewer.Gui.Presenters
             Get = get;
         }
 
-        public void Register(ILeadView view)
+        public void Register(ILeadsView view)
         {
             view.UpdateView += UpdateView;
             view.InsertLead += InsertPen;
@@ -39,7 +39,7 @@ namespace ParkerViewer.Gui.Presenters
             view.DeleteLead += DeletePen;
         }
 
-        private void UpdateView(ILeadView view)
+        private void UpdateView(ILeadsView view)
         {
             view.Leads = new List<LeadDto>(Get.Execute(new GetLeads()).ToList());
         }

@@ -43,9 +43,11 @@ namespace ParkerViewer.PensPage
             {
                 button1.Text = "-";
 
+                var controls = new List<Control>();
+
                 foreach (var item in Items.ToArray())
                 {
-                    tableLayoutPanel1.Controls.Add(new TextBox()
+                    controls.Add(new TextBox()
                     {
                         AutoSize = false, 
                         Dock = DockStyle.Fill,
@@ -66,7 +68,7 @@ namespace ParkerViewer.PensPage
                         box.ReadOnly = true;
                         box.KeyDown += DataChanged;
                         box.DoubleClick += (s, e) => box.ReadOnly = false;
-                        tableLayoutPanel1.Controls.Add(box);
+                        controls.Add(box);
                     }
 
                     else if (item.Item3 == TlbItemValue.Bool)
@@ -77,7 +79,7 @@ namespace ParkerViewer.PensPage
                         box.Checked = bool.Parse(item.Item2);
                         box.Name = $"item{item.Item1}";
                         box.CheckedChanged += ChangeData;
-                        tableLayoutPanel1.Controls.Add(box);
+                        controls.Add(box);
                     }
 
                     else if (item.Item3 == TlbItemValue.Enum)
@@ -90,9 +92,22 @@ namespace ParkerViewer.PensPage
                         box.DropDownStyle = ComboBoxStyle.DropDownList;
                         box.Text = item.Item2;
                         box.SelectedIndexChanged += ChangeData;
-                        tableLayoutPanel1.Controls.Add(box);
+                        controls.Add(box);
+                    }
+
+                    else if (item.Item3 == TlbItemValue.DateTime)
+                    {
+                        var box = new DateTimePicker();
+                        box.AutoSize = false;
+                        box.Dock = DockStyle.Fill;
+                        box.Name = $"item{item.Item1}";
+                        box.Value = DateTime.Parse(item.Item2);
+                        box.ValueChanged += ChangeData;
+                        controls.Add(box);
                     }
                 }
+
+                tableLayoutPanel1.Controls.AddRange(controls.ToArray());
             }
 
             else

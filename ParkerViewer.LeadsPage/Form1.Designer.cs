@@ -29,13 +29,34 @@ namespace ParkerViewer.LeadsPage
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.leadsPageControl1 = new ParkerViewer.LeadsPage.LeadsPageControl();
+            this.SuspendLayout();
+            // 
+            // leadsPageControl1
+            // 
+            this.leadsPageControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.leadsPageControl1.Leads = null;
+            this.leadsPageControl1.Location = new System.Drawing.Point(0, 0);
+            this.leadsPageControl1.Name = "leadsPageControl1";
+            this.leadsPageControl1.Size = new System.Drawing.Size(800, 450);
+            this.leadsPageControl1.TabIndex = 0;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.leadsPageControl1);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private LeadsPageControl leadsPageControl1;
     }
 }
 

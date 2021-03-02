@@ -22,7 +22,7 @@ namespace ParkerViewer.Abstractions.Dtos
 
         public bool Payed { get; set; }
 
-        public bool Deleivered { get; set; }
+        public bool Delivered { get; set; }
 
         public int[] Pens { get; set; }
 

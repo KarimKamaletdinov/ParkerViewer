@@ -28,7 +28,7 @@ namespace ParkerViewer.Handlers.Lead
                 Flat = lead.Flat,
                 Agreed = lead.Agreed,
                 Payed = lead.Payed,
-                Deleivered = lead.Deleivered,
+                Delivered = lead.Deleivered,
                 Pens = lead.Pens,
                 CreatingDate = lead.CreatingDate,
                 DeliveryDate = lead.DeliveryDate,
