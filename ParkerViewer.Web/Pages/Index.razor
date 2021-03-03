@@ -1,0 +1,30 @@
+﻿@page "/"
+@using ParkerViewer.WebClients.Pen
+@using ParkerViewer.Abstractions.Queries
+@using ParkerViewer.WebClients.PenItem
+@inject GetPensWebClient GetPens
+@inject GetPenItemsWebClient GetPenItems
+
+<h1>Hello, world!</h1>
+
+<table class="table">
+    <tbody>
+    <tr>
+        <th>Название</th><th>Кол-во на складе</th>
+    </tr>
+    @foreach (var pen in GetPens.Execute(new GetPens()))
+    {
+        <tr><td>@pen.Name</td>
+            <td onclick="OnClick">@GetPenItems.Execute(new GetPenItems()).Count(x => x.ModelId ==
+                    pen.Id)</td></tr>
+    }
+    </tbody>
+</table>
+
+@code
+{
+    public void OnClick()
+    {
+
+    }
+}
